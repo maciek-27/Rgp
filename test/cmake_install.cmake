@@ -1,4 +1,4 @@
-# Install script for directory: /home/maciek/SW/rexio/test
+# Install script for directory: /home/maciek/SW/Rgp/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,14 +34,14 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/maciek/SW/rexio/test/1/cmake_install.cmake")
-  include("/home/maciek/SW/rexio/test/2/cmake_install.cmake")
-  include("/home/maciek/SW/rexio/test/3/cmake_install.cmake")
-  include("/home/maciek/SW/rexio/test/4/cmake_install.cmake")
-  include("/home/maciek/SW/rexio/test/5/cmake_install.cmake")
-  include("/home/maciek/SW/rexio/test/7/cmake_install.cmake")
-  include("/home/maciek/SW/rexio/test/8/cmake_install.cmake")
-  include("/home/maciek/SW/rexio/test/9/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/test/1/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/test/2/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/test/3/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/test/4/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/test/5/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/test/7/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/test/8/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/test/9/cmake_install.cmake")
 
 endif()
 

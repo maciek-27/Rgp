@@ -114,28 +114,27 @@ void Window::RedrawRequest()throw()
 
 void Window::PassFocusRequest(FocusPolicy focustype)throw() 
 {	
-  return ;
-  if (!elements.empty()) {		
-    if(activeWidget != elements.end()) {			
-      (*activeWidget)->OnUnFocus(focustype);
-      ++activeWidget;
-    }
+	if (!elements.empty()) {		
+		if(activeWidget != elements.end()) {			
+			(*activeWidget)->OnUnFocus(focustype);
+		}
 		
-   		
-    if (activeWidget == elements.end()) {
-      if(focustype == TabFocus) {
-	parentWindow->PassFocusRequest(focustype);				
-	return;
-      }
-      // activeWidget = elements.end();
-      // return;
-    }
-    
-    if((*activeWidget)->IsHidden ())
-      PassFocusRequest(focustype);
-    else
-      (*activeWidget)->OnFocus(focustype);
-  }
+		++activeWidget;
+		
+		if (activeWidget == elements.end()) {
+			if(focustype == TabFocus) {
+				parentWindow->PassFocusRequest(focustype);				
+				return;
+			}
+			activeWidget = elements.end();
+			return;
+		}
+		
+		if((*activeWidget)->IsHidden ())
+			PassFocusRequest(focustype);
+		else
+			(*activeWidget)->OnFocus(focustype);
+	}
 }
 
 void Window::SetActiveWidget(Widget &w)
@@ -162,16 +161,19 @@ Widget& Window::GetActiveWidget()const throw(WidgetNotPresent)
 
 void Window::OnFocus(FocusPolicy focustype)throw()
 {
-  if (elements.empty())
-    return;
+	if (elements.empty())
+		return;
+
 	if(activeWidget == elements.end()) {
+
 		activeWidget = elements.begin();
-		if(activeWidget != elements.end())
+		if(activeWidget != elements.end()) {
 			(*activeWidget)->OnFocus(focustype);
-		else
+		} else {
 			parentWindow->PassFocusRequest(focustype);
-	}
-	else {
+		}
+
+	} else {
 		(*activeWidget)->OnFocus(focustype);
 	}
 }
@@ -186,8 +188,9 @@ void Window::OnUnFocus(FocusPolicy focustype)throw()
 void Window::OnStart()throw()
 {
     WidgetList::iterator i;
-    for (i=elements.begin(); i!=elements.end();++i)
-		(*i)->OnStart();
+    for (i=elements.begin(); i!=elements.end();++i) {
+	    (*i)->OnStart();
+    }
     activeWidget=elements.begin();
 }
 

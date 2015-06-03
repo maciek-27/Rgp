@@ -1,4 +1,4 @@
-# Install script for directory: /home/maciek/SW/rexio/lib/net
+# Install script for directory: /home/maciek/SW/Rgp/lib/net
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

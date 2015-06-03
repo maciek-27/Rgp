@@ -29,16 +29,19 @@
 #define __TRACE_H__
 #include <iostream>
 
+//#define DEBUG
+
+
 #ifdef NDEBUG
-#ifdef DEBUG
-#undef DEBUG
-#endif
+# ifdef DEBUG
+#  undef DEBUG
+# endif
 #endif
 
 #ifdef DEBUG
-#ifndef LOGGING_LEVEL
-#define LOGGING_LEVEL LogLevelModerate
-#endif
+# ifndef LOGGING_LEVEL
+#  define LOGGING_LEVEL LogLevelModerate
+# endif
 #endif		
 
 namespace Scr
@@ -56,9 +59,9 @@ namespace Scr
 //! library itself. 
 //!
 #ifdef DEBUG
-#define RexIOLog(level) if(level<=LOGGING_LEVEL) std::clog
+# define RexIOLog(level) if(level<=LOGGING_LEVEL) std::clog
 #else
-#define RexIOLog(level) if (0) std::clog
+# define RexIOLog(level) if (0) std::clog
 #endif		
 
 #endif

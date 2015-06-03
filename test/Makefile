@@ -43,18 +43,18 @@ RM = /home/usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maciek/SW/rexio
+CMAKE_SOURCE_DIR = /home/maciek/SW/Rgp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maciek/SW/rexio
+CMAKE_BINARY_DIR = /home/maciek/SW/Rgp
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -73,14 +73,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles /home/maciek/SW/rexio/test/CMakeFiles/progress.marks
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles /home/maciek/SW/Rgp/test/CMakeFiles/progress.marks
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/clean
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/clean
 .PHONY : clean
 
 # The main clean target
@@ -89,17 +89,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -121,6 +121,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

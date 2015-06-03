@@ -11,5 +11,5 @@ include (src/core/CMakeLists.txt)
 include (src/real/CMakeLists.txt)
 include (src/subscreen/CMakeLists.txt)
 link_libraries (-lboost_thread  -lpthread -ldl) 
-add_library (rexio SHARED ${terminfo_sources} ${core_sources} ${real_sources} ${subscreen_sources})
 
+add_library (rexio SHARED ${terminfo_sources} ${core_sources} ${real_sources} ${subscreen_sources} )

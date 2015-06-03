@@ -212,7 +212,7 @@ void ServerImpl::Start(int portnum) {
     pthread_t cleaner_thread;
 
     if (fcntl(iSockFD, F_SETFL, O_NDELAY) < 0)
-        THROWP(FatalException, "Can't make nonblocking socked");
+        THROWP(FatalException, "Can't make nonblocking socket");
 
     if (pthread_create(&cleaner_thread, NULL, CleanerFunc, &active))
         THROWP(FatalException, "pthread_create (&cleaner_thread,NULL,CleanerFunc,NULL)");

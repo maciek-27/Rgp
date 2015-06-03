@@ -43,18 +43,18 @@ RM = /home/usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maciek/SW/rexio
+CMAKE_SOURCE_DIR = /home/maciek/SW/Rgp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maciek/SW/rexio
+CMAKE_BINARY_DIR = /home/maciek/SW/Rgp
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -73,14 +73,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles /home/maciek/SW/rexio/test/7/CMakeFiles/progress.marks
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/7/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles /home/maciek/SW/Rgp/test/7/CMakeFiles/progress.marks
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/7/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/7/clean
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/7/clean
 .PHONY : clean
 
 # The main clean target
@@ -89,22 +89,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/7/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/7/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/7/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/7/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/7/CMakeFiles/test.dir/rule:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/7/CMakeFiles/test.dir/rule
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/7/CMakeFiles/test.dir/rule
 .PHONY : test/7/CMakeFiles/test.dir/rule
 
 # Convenience name for target.
@@ -113,187 +113,187 @@ test: test/7/CMakeFiles/test.dir/rule
 
 # fast build rule for target.
 test/fast:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/build
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
 # target to build an object file
 src/addentitydialog.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/addentitydialog.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/addentitydialog.o
 .PHONY : src/addentitydialog.o
 
 # target to preprocess a source file
 src/addentitydialog.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/addentitydialog.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/addentitydialog.i
 .PHONY : src/addentitydialog.i
 
 # target to generate assembly for a file
 src/addentitydialog.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/addentitydialog.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/addentitydialog.s
 .PHONY : src/addentitydialog.s
 
 # target to build an object file
 src/canproduce.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/canproduce.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/canproduce.o
 .PHONY : src/canproduce.o
 
 # target to preprocess a source file
 src/canproduce.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/canproduce.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/canproduce.i
 .PHONY : src/canproduce.i
 
 # target to generate assembly for a file
 src/canproduce.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/canproduce.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/canproduce.s
 .PHONY : src/canproduce.s
 
 # target to build an object file
 src/entity.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity.o
 .PHONY : src/entity.o
 
 # target to preprocess a source file
 src/entity.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity.i
 .PHONY : src/entity.i
 
 # target to generate assembly for a file
 src/entity.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity.s
 .PHONY : src/entity.s
 
 # target to build an object file
 src/entity_types.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity_types.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity_types.o
 .PHONY : src/entity_types.o
 
 # target to preprocess a source file
 src/entity_types.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity_types.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity_types.i
 .PHONY : src/entity_types.i
 
 # target to generate assembly for a file
 src/entity_types.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity_types.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/entity_types.s
 .PHONY : src/entity_types.s
 
 # target to build an object file
 src/hintbox.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/hintbox.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/hintbox.o
 .PHONY : src/hintbox.o
 
 # target to preprocess a source file
 src/hintbox.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/hintbox.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/hintbox.i
 .PHONY : src/hintbox.i
 
 # target to generate assembly for a file
 src/hintbox.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/hintbox.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/hintbox.s
 .PHONY : src/hintbox.s
 
 # target to build an object file
 src/keymap.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/keymap.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/keymap.o
 .PHONY : src/keymap.o
 
 # target to preprocess a source file
 src/keymap.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/keymap.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/keymap.i
 .PHONY : src/keymap.i
 
 # target to generate assembly for a file
 src/keymap.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/keymap.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/keymap.s
 .PHONY : src/keymap.s
 
 # target to build an object file
 src/main.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/main.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/main.o
 .PHONY : src/main.o
 
 # target to preprocess a source file
 src/main.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/main.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/main.i
 .PHONY : src/main.i
 
 # target to generate assembly for a file
 src/main.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/main.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/main.s
 .PHONY : src/main.s
 
 # target to build an object file
 src/map.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/map.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/map.o
 .PHONY : src/map.o
 
 # target to preprocess a source file
 src/map.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/map.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/map.i
 .PHONY : src/map.i
 
 # target to generate assembly for a file
 src/map.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/map.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/map.s
 .PHONY : src/map.s
 
 # target to build an object file
 src/mapdata.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/mapdata.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/mapdata.o
 .PHONY : src/mapdata.o
 
 # target to preprocess a source file
 src/mapdata.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/mapdata.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/mapdata.i
 .PHONY : src/mapdata.i
 
 # target to generate assembly for a file
 src/mapdata.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/mapdata.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/mapdata.s
 .PHONY : src/mapdata.s
 
 # target to build an object file
 src/pathfinder.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/pathfinder.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/pathfinder.o
 .PHONY : src/pathfinder.o
 
 # target to preprocess a source file
 src/pathfinder.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/pathfinder.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/pathfinder.i
 .PHONY : src/pathfinder.i
 
 # target to generate assembly for a file
 src/pathfinder.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/pathfinder.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/pathfinder.s
 .PHONY : src/pathfinder.s
 
 # target to build an object file
 src/playerassets.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/playerassets.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/playerassets.o
 .PHONY : src/playerassets.o
 
 # target to preprocess a source file
 src/playerassets.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/playerassets.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/playerassets.i
 .PHONY : src/playerassets.i
 
 # target to generate assembly for a file
 src/playerassets.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/playerassets.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/playerassets.s
 .PHONY : src/playerassets.s
 
 # target to build an object file
 src/statusbar.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/statusbar.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/statusbar.o
 .PHONY : src/statusbar.o
 
 # target to preprocess a source file
 src/statusbar.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/statusbar.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/statusbar.i
 .PHONY : src/statusbar.i
 
 # target to generate assembly for a file
 src/statusbar.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/statusbar.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/7/CMakeFiles/test.dir/build.make test/7/CMakeFiles/test.dir/src/statusbar.s
 .PHONY : src/statusbar.s
 
 # Help Target
@@ -352,6 +352,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

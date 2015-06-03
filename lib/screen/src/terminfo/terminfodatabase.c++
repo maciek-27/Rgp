@@ -67,23 +67,31 @@ TerminfoDatabase::OpenFile(const char * name)
 	fullPath.push_back('/');
 	fullPath.append(name);
 	RexIOLog(LogLevelModerate) << "Looking for terminfo entry for " << name 
-			  << " in file " << fullPath << std::endl;
+				   << " in file " << fullPath << std::endl;
 	struct stat statbuf;
 
-	if (stat(fullPath.c_str(),&statbuf))
+	if (stat(fullPath.c_str(),&statbuf)) {
+		if (!strcmp("xterm", name)) {
+			std::cout << "Fallback for color\n";
 		/* if stat failed, then probably file does not exist*/
-		THROW(NotSupportedTerminalType);
+			return OpenFile("xterm-color");
+		} else {
+			THROW(NotSupportedTerminalType);
+		}
+	}
 	
 	boost::shared_ptr<std::ifstream>
 		result ( new
-				 std::ifstream( fullPath.c_str(),
-								std::ifstream::in | std::ifstream::binary ) );
-
-	if (result->good())
+			 std::ifstream( fullPath.c_str(),
+					std::ifstream::in |
+					std::ifstream::binary ) );
+	
+	if (result->good()) {
 		return result;
-	else
+	} else {
 		THROW(FailedToLoadDatabaseEntry);
-		
+	}
+			
 }// OpenFile
 
 bool TerminfoDatabase::GetDatabaseStatus()throw()

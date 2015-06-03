@@ -1,4 +1,4 @@
-# Install script for directory: /home/maciek/SW/rexio/lib/toolkit
+# Install script for directory: /home/maciek/SW/Rgp/lib/toolkit
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

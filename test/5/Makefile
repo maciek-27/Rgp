@@ -43,18 +43,18 @@ RM = /home/usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maciek/SW/rexio
+CMAKE_SOURCE_DIR = /home/maciek/SW/Rgp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maciek/SW/rexio
+CMAKE_BINARY_DIR = /home/maciek/SW/Rgp
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -73,14 +73,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles /home/maciek/SW/rexio/test/5/CMakeFiles/progress.marks
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/5/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles /home/maciek/SW/Rgp/test/5/CMakeFiles/progress.marks
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/5/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/5/clean
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/5/clean
 .PHONY : clean
 
 # The main clean target
@@ -89,22 +89,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/5/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/5/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/5/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/5/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/5/CMakeFiles/test.dir/rule:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 test/5/CMakeFiles/test.dir/rule
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 test/5/CMakeFiles/test.dir/rule
 .PHONY : test/5/CMakeFiles/test.dir/rule
 
 # Convenience name for target.
@@ -113,67 +113,67 @@ test: test/5/CMakeFiles/test.dir/rule
 
 # fast build rule for target.
 test/fast:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/build
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
 # target to build an object file
 src/demo.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/demo.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/demo.o
 .PHONY : src/demo.o
 
 # target to preprocess a source file
 src/demo.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/demo.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/demo.i
 .PHONY : src/demo.i
 
 # target to generate assembly for a file
 src/demo.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/demo.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/demo.s
 .PHONY : src/demo.s
 
 # target to build an object file
 src/main.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/main.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/main.o
 .PHONY : src/main.o
 
 # target to preprocess a source file
 src/main.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/main.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/main.i
 .PHONY : src/main.i
 
 # target to generate assembly for a file
 src/main.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/main.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/main.s
 .PHONY : src/main.s
 
 # target to build an object file
 src/manager.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/manager.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/manager.o
 .PHONY : src/manager.o
 
 # target to preprocess a source file
 src/manager.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/manager.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/manager.i
 .PHONY : src/manager.i
 
 # target to generate assembly for a file
 src/manager.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/manager.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/manager.s
 .PHONY : src/manager.s
 
 # target to build an object file
 src/netconn.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/netconn.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/netconn.o
 .PHONY : src/netconn.o
 
 # target to preprocess a source file
 src/netconn.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/netconn.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/netconn.i
 .PHONY : src/netconn.i
 
 # target to generate assembly for a file
 src/netconn.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/netconn.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f test/5/CMakeFiles/test.dir/build.make test/5/CMakeFiles/test.dir/src/netconn.s
 .PHONY : src/netconn.s
 
 # Help Target
@@ -208,6 +208,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

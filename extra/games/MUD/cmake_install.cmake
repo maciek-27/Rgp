@@ -1,4 +1,4 @@
-# Install script for directory: /home/maciek/SW/rexio/extra/games/MUD
+# Install script for directory: /home/maciek/SW/Rgp/extra/games/MUD
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

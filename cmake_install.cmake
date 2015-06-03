@@ -1,4 +1,4 @@
-# Install script for directory: /home/maciek/SW/rexio
+# Install script for directory: /home/maciek/SW/Rgp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,9 +34,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/maciek/SW/rexio/lib/cmake_install.cmake")
-  include("/home/maciek/SW/rexio/test/cmake_install.cmake")
-  include("/home/maciek/SW/rexio/extra/games/MUD/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/lib/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/test/cmake_install.cmake")
+  include("/home/maciek/SW/Rgp/extra/games/MUD/cmake_install.cmake")
 
 endif()
 
@@ -46,7 +46,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/home/maciek/SW/rexio/${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "/home/maciek/SW/Rgp/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/home/maciek/SW/rexio/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "/home/maciek/SW/Rgp/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()

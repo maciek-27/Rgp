@@ -43,18 +43,18 @@ RM = /home/usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maciek/SW/rexio
+CMAKE_SOURCE_DIR = /home/maciek/SW/Rgp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maciek/SW/rexio
+CMAKE_BINARY_DIR = /home/maciek/SW/Rgp
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -73,14 +73,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles /home/maciek/SW/rexio/lib/toolkit/CMakeFiles/progress.marks
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles /home/maciek/SW/Rgp/lib/toolkit/CMakeFiles/progress.marks
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/clean
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/clean
 .PHONY : clean
 
 # The main clean target
@@ -89,22 +89,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/toolkit/CMakeFiles/rexiotk.dir/rule:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/CMakeFiles/rexiotk.dir/rule
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/toolkit/CMakeFiles/rexiotk.dir/rule
 .PHONY : lib/toolkit/CMakeFiles/rexiotk.dir/rule
 
 # Convenience name for target.
@@ -113,247 +113,247 @@ rexiotk: lib/toolkit/CMakeFiles/rexiotk.dir/rule
 
 # fast build rule for target.
 rexiotk/fast:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/build
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/build
 .PHONY : rexiotk/fast
 
 # target to build an object file
 src/activewidget.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/activewidget.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/activewidget.o
 .PHONY : src/activewidget.o
 
 # target to preprocess a source file
 src/activewidget.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/activewidget.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/activewidget.i
 .PHONY : src/activewidget.i
 
 # target to generate assembly for a file
 src/activewidget.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/activewidget.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/activewidget.s
 .PHONY : src/activewidget.s
 
 # target to build an object file
 src/boxgroup.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/boxgroup.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/boxgroup.o
 .PHONY : src/boxgroup.o
 
 # target to preprocess a source file
 src/boxgroup.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/boxgroup.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/boxgroup.i
 .PHONY : src/boxgroup.i
 
 # target to generate assembly for a file
 src/boxgroup.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/boxgroup.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/boxgroup.s
 .PHONY : src/boxgroup.s
 
 # target to build an object file
 src/button.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/button.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/button.o
 .PHONY : src/button.o
 
 # target to preprocess a source file
 src/button.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/button.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/button.i
 .PHONY : src/button.i
 
 # target to generate assembly for a file
 src/button.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/button.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/button.s
 .PHONY : src/button.s
 
 # target to build an object file
 src/checkbox.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/checkbox.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/checkbox.o
 .PHONY : src/checkbox.o
 
 # target to preprocess a source file
 src/checkbox.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/checkbox.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/checkbox.i
 .PHONY : src/checkbox.i
 
 # target to generate assembly for a file
 src/checkbox.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/checkbox.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/checkbox.s
 .PHONY : src/checkbox.s
 
 # target to build an object file
 src/framedwindow.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/framedwindow.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/framedwindow.o
 .PHONY : src/framedwindow.o
 
 # target to preprocess a source file
 src/framedwindow.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/framedwindow.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/framedwindow.i
 .PHONY : src/framedwindow.i
 
 # target to generate assembly for a file
 src/framedwindow.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/framedwindow.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/framedwindow.s
 .PHONY : src/framedwindow.s
 
 # target to build an object file
 src/horizontalgroup.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/horizontalgroup.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/horizontalgroup.o
 .PHONY : src/horizontalgroup.o
 
 # target to preprocess a source file
 src/horizontalgroup.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/horizontalgroup.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/horizontalgroup.i
 .PHONY : src/horizontalgroup.i
 
 # target to generate assembly for a file
 src/horizontalgroup.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/horizontalgroup.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/horizontalgroup.s
 .PHONY : src/horizontalgroup.s
 
 # target to build an object file
 src/inputbox.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/inputbox.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/inputbox.o
 .PHONY : src/inputbox.o
 
 # target to preprocess a source file
 src/inputbox.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/inputbox.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/inputbox.i
 .PHONY : src/inputbox.i
 
 # target to generate assembly for a file
 src/inputbox.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/inputbox.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/inputbox.s
 .PHONY : src/inputbox.s
 
 # target to build an object file
 src/label.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/label.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/label.o
 .PHONY : src/label.o
 
 # target to preprocess a source file
 src/label.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/label.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/label.i
 .PHONY : src/label.i
 
 # target to generate assembly for a file
 src/label.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/label.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/label.s
 .PHONY : src/label.s
 
 # target to build an object file
 src/rootwindow.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/rootwindow.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/rootwindow.o
 .PHONY : src/rootwindow.o
 
 # target to preprocess a source file
 src/rootwindow.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/rootwindow.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/rootwindow.i
 .PHONY : src/rootwindow.i
 
 # target to generate assembly for a file
 src/rootwindow.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/rootwindow.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/rootwindow.s
 .PHONY : src/rootwindow.s
 
 # target to build an object file
 src/scrollbar.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/scrollbar.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/scrollbar.o
 .PHONY : src/scrollbar.o
 
 # target to preprocess a source file
 src/scrollbar.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/scrollbar.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/scrollbar.i
 .PHONY : src/scrollbar.i
 
 # target to generate assembly for a file
 src/scrollbar.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/scrollbar.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/scrollbar.s
 .PHONY : src/scrollbar.s
 
 # target to build an object file
 src/selectbox.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/selectbox.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/selectbox.o
 .PHONY : src/selectbox.o
 
 # target to preprocess a source file
 src/selectbox.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/selectbox.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/selectbox.i
 .PHONY : src/selectbox.i
 
 # target to generate assembly for a file
 src/selectbox.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/selectbox.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/selectbox.s
 .PHONY : src/selectbox.s
 
 # target to build an object file
 src/stylesheet.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/stylesheet.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/stylesheet.o
 .PHONY : src/stylesheet.o
 
 # target to preprocess a source file
 src/stylesheet.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/stylesheet.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/stylesheet.i
 .PHONY : src/stylesheet.i
 
 # target to generate assembly for a file
 src/stylesheet.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/stylesheet.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/stylesheet.s
 .PHONY : src/stylesheet.s
 
 # target to build an object file
 src/verticalgroup.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/verticalgroup.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/verticalgroup.o
 .PHONY : src/verticalgroup.o
 
 # target to preprocess a source file
 src/verticalgroup.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/verticalgroup.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/verticalgroup.i
 .PHONY : src/verticalgroup.i
 
 # target to generate assembly for a file
 src/verticalgroup.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/verticalgroup.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/verticalgroup.s
 .PHONY : src/verticalgroup.s
 
 # target to build an object file
 src/widget.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widget.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widget.o
 .PHONY : src/widget.o
 
 # target to preprocess a source file
 src/widget.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widget.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widget.i
 .PHONY : src/widget.i
 
 # target to generate assembly for a file
 src/widget.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widget.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widget.s
 .PHONY : src/widget.s
 
 # target to build an object file
 src/widgetgroup.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widgetgroup.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widgetgroup.o
 .PHONY : src/widgetgroup.o
 
 # target to preprocess a source file
 src/widgetgroup.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widgetgroup.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widgetgroup.i
 .PHONY : src/widgetgroup.i
 
 # target to generate assembly for a file
 src/widgetgroup.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widgetgroup.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/widgetgroup.s
 .PHONY : src/widgetgroup.s
 
 # target to build an object file
 src/window.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/window.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/window.o
 .PHONY : src/window.o
 
 # target to preprocess a source file
 src/window.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/window.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/window.i
 .PHONY : src/window.i
 
 # target to generate assembly for a file
 src/window.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/window.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/toolkit/CMakeFiles/rexiotk.dir/build.make lib/toolkit/CMakeFiles/rexiotk.dir/src/window.s
 .PHONY : src/window.s
 
 # Help Target
@@ -424,6 +424,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -43,18 +43,18 @@ RM = /home/usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maciek/SW/rexio
+CMAKE_SOURCE_DIR = /home/maciek/SW/Rgp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maciek/SW/rexio
+CMAKE_BINARY_DIR = /home/maciek/SW/Rgp
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -73,14 +73,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles /home/maciek/SW/rexio/lib/screen/CMakeFiles/progress.marks
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/rexio/CMakeFiles 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles /home/maciek/SW/Rgp/lib/screen/CMakeFiles/progress.marks
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maciek/SW/Rgp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/clean
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/clean
 .PHONY : clean
 
 # The main clean target
@@ -89,22 +89,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/preinstall
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/screen/CMakeFiles/rexio.dir/rule:
-	cd /home/maciek/SW/rexio && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/CMakeFiles/rexio.dir/rule
+	cd /home/maciek/SW/Rgp && $(MAKE) -f CMakeFiles/Makefile2 lib/screen/CMakeFiles/rexio.dir/rule
 .PHONY : lib/screen/CMakeFiles/rexio.dir/rule
 
 # Convenience name for target.
@@ -113,367 +113,367 @@ rexio: lib/screen/CMakeFiles/rexio.dir/rule
 
 # fast build rule for target.
 rexio/fast:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/build
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/build
 .PHONY : rexio/fast
 
 # target to build an object file
 src/core/bufferedinput.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/bufferedinput.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/bufferedinput.o
 .PHONY : src/core/bufferedinput.o
 
 # target to preprocess a source file
 src/core/bufferedinput.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/bufferedinput.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/bufferedinput.i
 .PHONY : src/core/bufferedinput.i
 
 # target to generate assembly for a file
 src/core/bufferedinput.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/bufferedinput.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/bufferedinput.s
 .PHONY : src/core/bufferedinput.s
 
 # target to build an object file
 src/core/commons.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/commons.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/commons.o
 .PHONY : src/core/commons.o
 
 # target to preprocess a source file
 src/core/commons.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/commons.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/commons.i
 .PHONY : src/core/commons.i
 
 # target to generate assembly for a file
 src/core/commons.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/commons.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/commons.s
 .PHONY : src/core/commons.s
 
 # target to build an object file
 src/core/connection.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/connection.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/connection.o
 .PHONY : src/core/connection.o
 
 # target to preprocess a source file
 src/core/connection.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/connection.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/connection.i
 .PHONY : src/core/connection.i
 
 # target to generate assembly for a file
 src/core/connection.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/connection.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/connection.s
 .PHONY : src/core/connection.s
 
 # target to build an object file
 src/core/displaystyle.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/displaystyle.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/displaystyle.o
 .PHONY : src/core/displaystyle.o
 
 # target to preprocess a source file
 src/core/displaystyle.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/displaystyle.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/displaystyle.i
 .PHONY : src/core/displaystyle.i
 
 # target to generate assembly for a file
 src/core/displaystyle.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/displaystyle.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/displaystyle.s
 .PHONY : src/core/displaystyle.s
 
 # target to build an object file
 src/core/exception.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/exception.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/exception.o
 .PHONY : src/core/exception.o
 
 # target to preprocess a source file
 src/core/exception.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/exception.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/exception.i
 .PHONY : src/core/exception.i
 
 # target to generate assembly for a file
 src/core/exception.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/exception.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/exception.s
 .PHONY : src/core/exception.s
 
 # target to build an object file
 src/core/glyphwidth.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/glyphwidth.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/glyphwidth.o
 .PHONY : src/core/glyphwidth.o
 
 # target to preprocess a source file
 src/core/glyphwidth.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/glyphwidth.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/glyphwidth.i
 .PHONY : src/core/glyphwidth.i
 
 # target to generate assembly for a file
 src/core/glyphwidth.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/glyphwidth.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/glyphwidth.s
 .PHONY : src/core/glyphwidth.s
 
 # target to build an object file
 src/core/keyboard.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/keyboard.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/keyboard.o
 .PHONY : src/core/keyboard.o
 
 # target to preprocess a source file
 src/core/keyboard.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/keyboard.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/keyboard.i
 .PHONY : src/core/keyboard.i
 
 # target to generate assembly for a file
 src/core/keyboard.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/keyboard.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/keyboard.s
 .PHONY : src/core/keyboard.s
 
 # target to build an object file
 src/core/screen.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screen.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screen.o
 .PHONY : src/core/screen.o
 
 # target to preprocess a source file
 src/core/screen.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screen.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screen.i
 .PHONY : src/core/screen.i
 
 # target to generate assembly for a file
 src/core/screen.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screen.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screen.s
 .PHONY : src/core/screen.s
 
 # target to build an object file
 src/core/screenbase.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbase.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbase.o
 .PHONY : src/core/screenbase.o
 
 # target to preprocess a source file
 src/core/screenbase.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbase.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbase.i
 .PHONY : src/core/screenbase.i
 
 # target to generate assembly for a file
 src/core/screenbase.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbase.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbase.s
 .PHONY : src/core/screenbase.s
 
 # target to build an object file
 src/core/screenbuffer.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbuffer.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbuffer.o
 .PHONY : src/core/screenbuffer.o
 
 # target to preprocess a source file
 src/core/screenbuffer.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbuffer.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbuffer.i
 .PHONY : src/core/screenbuffer.i
 
 # target to generate assembly for a file
 src/core/screenbuffer.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbuffer.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/screenbuffer.s
 .PHONY : src/core/screenbuffer.s
 
 # target to build an object file
 src/core/stacktrace.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/stacktrace.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/stacktrace.o
 .PHONY : src/core/stacktrace.o
 
 # target to preprocess a source file
 src/core/stacktrace.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/stacktrace.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/stacktrace.i
 .PHONY : src/core/stacktrace.i
 
 # target to generate assembly for a file
 src/core/stacktrace.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/stacktrace.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/stacktrace.s
 .PHONY : src/core/stacktrace.s
 
 # target to build an object file
 src/core/utf8.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/utf8.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/utf8.o
 .PHONY : src/core/utf8.o
 
 # target to preprocess a source file
 src/core/utf8.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/utf8.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/utf8.i
 .PHONY : src/core/utf8.i
 
 # target to generate assembly for a file
 src/core/utf8.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/utf8.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/core/utf8.s
 .PHONY : src/core/utf8.s
 
 # target to build an object file
 src/real/genericscreen.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/genericscreen.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/genericscreen.o
 .PHONY : src/real/genericscreen.o
 
 # target to preprocess a source file
 src/real/genericscreen.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/genericscreen.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/genericscreen.i
 .PHONY : src/real/genericscreen.i
 
 # target to generate assembly for a file
 src/real/genericscreen.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/genericscreen.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/genericscreen.s
 .PHONY : src/real/genericscreen.s
 
 # target to build an object file
 src/real/localscreen.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/localscreen.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/localscreen.o
 .PHONY : src/real/localscreen.o
 
 # target to preprocess a source file
 src/real/localscreen.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/localscreen.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/localscreen.i
 .PHONY : src/real/localscreen.i
 
 # target to generate assembly for a file
 src/real/localscreen.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/localscreen.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/localscreen.s
 .PHONY : src/real/localscreen.s
 
 # target to build an object file
 src/real/remotescreen.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/remotescreen.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/remotescreen.o
 .PHONY : src/real/remotescreen.o
 
 # target to preprocess a source file
 src/real/remotescreen.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/remotescreen.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/remotescreen.i
 .PHONY : src/real/remotescreen.i
 
 # target to generate assembly for a file
 src/real/remotescreen.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/remotescreen.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/remotescreen.s
 .PHONY : src/real/remotescreen.s
 
 # target to build an object file
 src/real/screenconnection.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/screenconnection.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/screenconnection.o
 .PHONY : src/real/screenconnection.o
 
 # target to preprocess a source file
 src/real/screenconnection.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/screenconnection.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/screenconnection.i
 .PHONY : src/real/screenconnection.i
 
 # target to generate assembly for a file
 src/real/screenconnection.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/screenconnection.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/screenconnection.s
 .PHONY : src/real/screenconnection.s
 
 # target to build an object file
 src/real/terminal.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminal.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminal.o
 .PHONY : src/real/terminal.o
 
 # target to preprocess a source file
 src/real/terminal.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminal.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminal.i
 .PHONY : src/real/terminal.i
 
 # target to generate assembly for a file
 src/real/terminal.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminal.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminal.s
 .PHONY : src/real/terminal.s
 
 # target to build an object file
 src/real/terminfoenabled.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminfoenabled.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminfoenabled.o
 .PHONY : src/real/terminfoenabled.o
 
 # target to preprocess a source file
 src/real/terminfoenabled.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminfoenabled.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminfoenabled.i
 .PHONY : src/real/terminfoenabled.i
 
 # target to generate assembly for a file
 src/real/terminfoenabled.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminfoenabled.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/terminfoenabled.s
 .PHONY : src/real/terminfoenabled.s
 
 # target to build an object file
 src/real/vt100compatible.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/vt100compatible.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/vt100compatible.o
 .PHONY : src/real/vt100compatible.o
 
 # target to preprocess a source file
 src/real/vt100compatible.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/vt100compatible.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/vt100compatible.i
 .PHONY : src/real/vt100compatible.i
 
 # target to generate assembly for a file
 src/real/vt100compatible.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/vt100compatible.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/real/vt100compatible.s
 .PHONY : src/real/vt100compatible.s
 
 # target to build an object file
 src/subscreen/subscreen.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/subscreen/subscreen.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/subscreen/subscreen.o
 .PHONY : src/subscreen/subscreen.o
 
 # target to preprocess a source file
 src/subscreen/subscreen.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/subscreen/subscreen.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/subscreen/subscreen.i
 .PHONY : src/subscreen/subscreen.i
 
 # target to generate assembly for a file
 src/subscreen/subscreen.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/subscreen/subscreen.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/subscreen/subscreen.s
 .PHONY : src/subscreen/subscreen.s
 
 # target to build an object file
 src/terminfo/terminfocore.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfocore.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfocore.o
 .PHONY : src/terminfo/terminfocore.o
 
 # target to preprocess a source file
 src/terminfo/terminfocore.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfocore.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfocore.i
 .PHONY : src/terminfo/terminfocore.i
 
 # target to generate assembly for a file
 src/terminfo/terminfocore.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfocore.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfocore.s
 .PHONY : src/terminfo/terminfocore.s
 
 # target to build an object file
 src/terminfo/terminfodatabase.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfodatabase.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfodatabase.o
 .PHONY : src/terminfo/terminfodatabase.o
 
 # target to preprocess a source file
 src/terminfo/terminfodatabase.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfodatabase.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfodatabase.i
 .PHONY : src/terminfo/terminfodatabase.i
 
 # target to generate assembly for a file
 src/terminfo/terminfodatabase.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfodatabase.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfodatabase.s
 .PHONY : src/terminfo/terminfodatabase.s
 
 # target to build an object file
 src/terminfo/terminfoentry.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfoentry.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfoentry.o
 .PHONY : src/terminfo/terminfoentry.o
 
 # target to preprocess a source file
 src/terminfo/terminfoentry.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfoentry.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfoentry.i
 .PHONY : src/terminfo/terminfoentry.i
 
 # target to generate assembly for a file
 src/terminfo/terminfoentry.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfoentry.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfoentry.s
 .PHONY : src/terminfo/terminfoentry.s
 
 # target to build an object file
 src/terminfo/terminfokeymap.o:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfokeymap.o
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfokeymap.o
 .PHONY : src/terminfo/terminfokeymap.o
 
 # target to preprocess a source file
 src/terminfo/terminfokeymap.i:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfokeymap.i
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfokeymap.i
 .PHONY : src/terminfo/terminfokeymap.i
 
 # target to generate assembly for a file
 src/terminfo/terminfokeymap.s:
-	cd /home/maciek/SW/rexio && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfokeymap.s
+	cd /home/maciek/SW/Rgp && $(MAKE) -f lib/screen/CMakeFiles/rexio.dir/build.make lib/screen/CMakeFiles/rexio.dir/src/terminfo/terminfokeymap.s
 .PHONY : src/terminfo/terminfokeymap.s
 
 # Help Target
@@ -568,6 +568,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/maciek/SW/rexio && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/maciek/SW/Rgp && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

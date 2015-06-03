@@ -40,11 +40,17 @@ Scr::Connection::Connection(std::istream & _input, std::ostream & _output)
 				(&TI::TerminfoCore::GetTerminfo(
 					screen->GetType()));
 		} else {
+			std::cout << "Making screen\n";
 			screen = std::auto_ptr<Screen>
 					(
 						new RScreen<RemoteScreen,TerminfoEnabledScreen>
 							(*this,_input,_output)
 					);
+			std::cout << "Checking entry\n";
+			const TI::TerminfoEntry * entry =
+				const_cast<Scr::TI::TerminfoEntry*>
+				(&TI::TerminfoCore::GetTerminfo(
+					screen->GetType()));
 		}
 	}
 	catch (TI::DatabaseException)
@@ -72,7 +78,7 @@ Scr::Connection::Connection(std::istream & _input, std::ostream & _output)
 		//screen==NULL - Connection::Start will return StartFailed,
 		//but nothing bad will happen. Nothing at all will happen  if
 		//Connection::Start will never be called.
-		abort();
+
 		// (it's auto_ptr, and by default it points "to nothing")
 	}
 }
