@@ -1,0 +1,106 @@
+\documentclass[twoside,11pt,a4paper]{article}
+\RequirePackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{wrapfig}
+\floatstyle{ruled}
+\newfloat{program}{htb}{lop}
+\floatname{program}{Program}
+\usepackage{pifont}
+\RequirePackage{indentfirst}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{graphicx}
+\RequirePackage{times}
+\RequirePackage{amssymb}
+\RequirePackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2191}{\ensuremath{\uparrow}}
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{listinggray}{gray}{0.9}
+\usepackage{wrapfig} 
+\usepackage{alltt}
+\widowpenalty=10000
+\clubpenalty=10000
+\newcommand{\dol}{\$}
+\usepackage{makeidx} 
+\makeindex
+\newcommand{\wdp} %
+{ {\vspace{0.2cm}%
+    \noindent\bf Wynik działania programu} %
+    \vspace{-0.3cm}\begin{alltt}\scriptsize}
+
+\newcommand{\kwdp} {\end{alltt}\vspace{-0.7cm}\noindent\hrulefill\\}
+
+\makeatletter \renewcommand{\@dotsep}{10000} \makeatother
+
+\newcounter{helpfun}
+\setcounter{helpfun}{0}
+
+\newcommand{\opX}[1]{\par %
+  \hspace{0.63cm}%
+  \begin{tabular}{ @{\hspace{-0.8cm}}r@{\hspace{0.1cm}}l@{}}%
+    \begin{minipage}[t]{1\textwidth}%
+      \hspace{-0.23cm}\hspace{-0.25cm}\footnotesize\ding{228}\texttt{\textbf{
+          \small  #1}}%
+    \end{minipage}&%
+    (%\arabic{section}.
+    \arabic{subsection}.\arabic{subsubsection})%
+    \stepcounter{subsubsection}\stepcounter{helpfun}\\%
+  \end{tabular}}
+
+\newenvironment{func_help}[1]%
+{\opX{#1}\nopagebreak
+  \par%
+  \noindent\begin{tabular}{ @{}r @{\hspace{0.1cm}} p{0.06\textwidth}@{}r@{}}%
+    \begin{minipage}[t]{0.04 \textwidth}\begin{flushright}\ \end{flushright}\end{minipage}& &%
+    \begin{minipage}[t]{0.90 \textwidth}\hspace{-0.09\textwidth} %
+    }%
+    {%
+    \end{minipage}\\%
+  \end{tabular}%
+  \par}
+
+
+\newcommand{\important}{\par\noindent\hspace{-53pt}\leavevmode\includegraphics[width=48pt]{graphics/Nuvola_apps_important}\par\vspace{-30pt}\par}
+\newcommand{\fullcode}{\par\noindent\hspace{-59pt}\leavevmode\includegraphics[width=48pt]{graphics/Nuvola_apps_edu_science}\par\vspace{-30pt}\par}
+\newcommand{\advanced}{\par\noindent\hspace{-59pt}\leavevmode\includegraphics[width=48pt]{graphics/Nuvola_apps_bookcase}\par\vspace{-30pt}\par}
+
+\newcommand{\op}[2]{  \begin{func_help}{#1}#2  \end{func_help}}
+\title{%ProjectName%\\{\Large %DocTitle%}\\%
+  {\large for revision number %RevNum%}}
+    \author{Damian Kaczmarek, Maciej Kamiński}\pagestyle{empty}
+
+    \makeatletter
+    \def\maketitle{%
+      \null
+      \thispagestyle{empty}%
+      \vfill
+      \begin{center}\leavevmode
+        \normalfont
+        {\LARGE\raggedleft \@author\par}%
+        \hrulefill\par
+        {\Huge\raggedright \@title\par}%
+        \vskip 1cm
+        % {\Large \@date\par}%
+      \end{center}%
+      \vfill
+      \begin{center}
+        \@date\\
+        www.rexio.org
+      \end{center}
+    }
+
+    \begin{document}
+    \maketitle\thispagestyle{empty}
+
+    \pagebreak
+    \null
+    \vspace{\fill}
+    \hspace{-0.2\linewidth}\begin{minipage}[l]{1.2\linewidth}
+      % \begin{wrapfigure}{r}{0.44\textwidth}
+      %   \begin{center}
+      %     \includegraphics[width=0.3\textwidth]{../frontpage.pdf}
+      %   \end{center}
+      % \end{wrapfigure}
+      \vspace{\fill}
+      \input{../../COPYING}
+    \end{minipage}

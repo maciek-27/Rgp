@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="client"
+			  xmlns:client="client"
+			  elementFormDefault="qualified" attributeFormDefault="unqualified"
+			  xmlns="client">
+
+
+	<xs:element name="close">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:simpleType name="offset_type">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base='xs:unsignedInt'/>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base='xs:string'>
+					<xs:enumeration value='begin'/>
+					<xs:enumeration value='end'/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	
+	<xs:element name="seek">
+		<xs:complexType>
+			<xs:attribute name="offset" type="offset_type" use="required" />
+			<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="truncate">
+		<xs:complexType>
+			<xs:attribute name="size" type="xs:unsignedInt" use="required" />
+			<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="data_transfer">
+		<xs:attribute name="size" type="xs:unsignedInt" use="required" />
+		<xs:attribute name="stream" type="xs:unsignedInt" use="required" />
+		<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+	</xs:complexType>
+	
+	<xs:element name="write" type="data_transfer" />
+	
+	<xs:element name="read" type="data_transfer" />
+	
+	<xs:element name="open">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="filename" />
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="create">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="filename"/>
+				<xs:element ref="flags"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="delete">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="target" type="xs:string" />
+				<xs:element name="recursive"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="src" type="xs:string" />
+	<xs:element name="dest" type="xs:string" />
+	
+	<xs:element name="move">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="src"/>
+				<xs:element ref="dest"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="copy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="src"/>
+				<xs:element ref="dest"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="chdir">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="dir" type="xs:string" />
+	
+	<xs:element name="recurse">
+		<xs:simpleType>
+			<xs:union>
+				<xs:simpleType>
+					<xs:restriction base='xs:unsignedInt'/>
+				</xs:simpleType>
+				<xs:simpleType>
+					<xs:restriction base='xs:string'>
+						<xs:enumeration value='∞'/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:union>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="permissions">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="read" minOccurs="0" /> <!-- implies copying, reading -->
+				<xs:element name="write" minOccurs="0" /> <!-- moving, deleting, writing -->
+				<xs:element name="branch" minOccurs="0" /> <!-- implies chdir and only if flags do allow branch -->
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="filesize" />
+	<xs:element name="filename" />
+	
+	<xs:element name="flags">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="branch" minOccurs="0" /> <!-- branchable file type -->
+				<xs:element name="data" minOccurs="0" /> <!-- file containing data, seekable -->
+				<xs:element name="read" minOccurs="0" /> <!-- readable, not necessarily data, may be a stream -->
+				<xs:element name="write" minOccurs="0" /> <!-- writeable, not necessarily data, may be a stream -->
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="metadata_request">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="flags" minOccurs="0" />
+				<xs:element ref="filename" minOccurs="0" />
+				<xs:element ref="filesize" minOccurs="0" />
+				<xs:element ref="permissions" minOccurs="0" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="from" type="xs:positiveInteger" />
+	<xs:element name="to" type="xs:positiveInteger" />
+	
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dir" minOccurs="0" />
+				<xs:element ref="recurse" minOccurs="0" />
+				<xs:element ref="metadata_request" />
+				<xs:element ref="from" />
+				<xs:element ref="to" />
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="filter" type="xs:string" />
+	
+	<xs:element name="filters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="filter" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="stream_request">
+		<xs:sequence>
+			<xs:element ref="start_tls" minOccurs="0" maxOccurs="1" />
+			<xs:element ref="filters" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:unsignedInt" use="required" />
+	</xs:complexType>
+	
+	<xs:element name="dstream_request" type="stream_request" />
+	
+	<xs:element name="cstream_request" type="stream_request" />
+	
+	<xs:element name="auth_data">
+		<xs:simpleType>
+			<xs:union memberTypes="xs:base64Binary xs:hexBinary" />
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="username" type="xs:string" />
+	
+	<!-- <key/> can be any kind of data that might be usable
+	by an authentification method and can be send by the client
+	at such early state of authentication. -->
+	<xs:element name="key" type="xs:string" />
+	
+	<xs:element name="auth_method" type="xs:string" />
+	
+	<xs:element name="auth_request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="username"  />
+				<xs:element ref="key" minOccurs="0" />
+				<xs:element ref="auth_method"  />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="start_tls" />
+	
+	<xs:element name="user_agent" type="xs:string" />
+	
+	<xs:element name="hello">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="user_agent" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="xftp">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="hello"/>
+				<xs:element ref="start_tls"/>
+				<xs:element ref="auth_request"/>
+				<xs:element ref="auth_data"/>
+				<xs:choice minOccurs="1" maxOccurs="unbounded">
+					<xs:element ref="cstream_request"/>
+					<xs:element ref="dstream_request"/>
+				</xs:choice>
+				<xs:choice minOccurs="1" maxOccurs="unbounded">
+					<xs:element ref="list"/>
+					<xs:element ref="chdir"/>
+					<xs:element ref="copy"/>
+					<xs:element ref="move"/>
+					<xs:element ref="delete"/>
+					<xs:element ref="create"/>
+				</xs:choice>
+				<xs:choice minOccurs="1" maxOccurs="unbounded">
+					<xs:element ref="open"/>
+					<xs:element ref="read"/>
+					<xs:element ref="write"/>
+					<xs:element ref="truncate"/>
+					<xs:element ref="seek"/>
+					<xs:element ref="close"/>
+				</xs:choice>
+			</xs:choice>
+			<xs:attribute name="version" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:float">
+						<xs:pattern value="\d\.\d\d?"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+		<xs:unique name="seq_key">
+			<xs:selector xpath=".//*"/>
+			<xs:field xpath="@id"/>
+		</xs:unique>
+	</xs:element>
+	
+	
+</xs:schema>

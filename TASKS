@@ -1,0 +1,22 @@
+1.0:
+ID	Reporter	Status		Assigned/Changed by
+101	rush		Open		rush	
+	Description:
+	Proxy class between RootWindow and Connection.
+	1. RootWindow's constructor creates object of class A
+	   (A: public Connection)
+	2. Class A would have a pointer to RootWindow.
+	3. RootWindow has its own Start(argc, argv) handling
+	   the styles, and starting A::Start() afterwards.
+	4. We're in libscreen.
+	5. A::OnStart() is called which sets everything in
+	   RootWindow(width, height etc.)
+	6. RootWindow reacts on events like any ordinary window
+	   because it gets them when A reacts on its.
+	   
+102	mzg		Open		rush	*HIGH PRIORITY*
+	Description:
+	Provide documentation and handbook chapter for
+	utilizing stylesheets.
+
+Post 1.0 tasks:

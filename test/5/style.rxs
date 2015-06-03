@@ -1,0 +1,72 @@
+/* a sample basic style :-) */
+
+RootWindow {
+    style: Black Dark Green;
+}
+
+FramedWindow {
+    style: Red Bright Black;
+    frameColor: White Dark Red;
+}
+
+LoginWindow {
+    style: Red Bright Black;
+    frameColor: White Dark Red;
+}
+
+Label#welcome {
+    style: Yellow Bright Transparent;
+    content: "Witaj w aplikacji testowej RexIO";
+}
+
+Label#welcome2 {
+    style: Yellow Bright Transparent;
+    content: "Witaj w aplikacji do pogawędek RexIO!";
+}
+
+Inputbox#nickinput {
+    style: White Dark Blue;
+    cursorStyle: Yellow Bright Yellow;
+    activeStyle: White Bright Blue;
+}
+
+Button#okbutton {
+    style: White Dark Blue;
+    activeStyle: White Bright Blue;
+}
+
+Label#info0 { content: "Demo to ukazaje działanie RexIO na przykładzie";}
+Label#info1 { content: "sieciowej aplikacji do pogawędek.";}
+Label#info2 { content: "Interfejs graficzny udostępniany jest przez";}
+Label#info3 { content: "zwykły klient "telnet".";}
+Label#info5 { style: Magenta Bright Transparent; }
+Label#info6 { content: "Użyj telnet by połączyć się z powyższym portem.";}
+
+Label#info15 { content: "Miłego użytkowania!"; }
+
+Label#rexio1 { content: "RexIO jest biblioteką kontroli interfejsu";}
+Label#rexio2 { content: "tekstowego z wsparciem dla szerokiej gamy";}
+Label#rexio3 { content: "terminali oraz sposobów łączenia. Terminale";}
+Label#rexio4 { content: "zdalne jak i lokalne obsługiwane są przez";}
+Label#rexio5 { content: "klasy o takim samym interfejsie.";}
+
+RexLogo { style: Cyan Bright Transparent; }
+
+Label#infobar {
+    style: White Bright Yellow;
+}
+
+Inputbox#msginput {
+    style: White Dark Blue;
+    cursorStyle: Yellow Bright Yellow;
+    activeStyle: White Bright Blue;
+}
+
+NickList {
+    style: Yellow Bright Red;
+
+}
+
+MsgList {
+    nickColor: Magenta Bright Transparent;
+}

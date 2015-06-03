@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   sodipodi:docbase="/home/rush/Programowanie/mud/tp2007/doc"
+   sodipodi:docname="boxgroup.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.7411011"
+     inkscape:cx="211.61309"
+     inkscape:cy="917.51012"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="792"
+     inkscape:window-height="590"
+     inkscape:window-x="94"
+     inkscape:window-y="55" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#550000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.42685878;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2160"
+       width="289.32919"
+       height="195.55162"
+       x="67.348473"
+       y="41.803787" />
+    <rect
+       style="opacity:0.68999999;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.22082078;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3146"
+       width="55.146358"
+       height="24.623957"
+       x="68.30336"
+       y="127.26762" />
+    <rect
+       style="opacity:0.68999999;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.52308333;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4117"
+       width="115.21062"
+       height="194.56885"
+       x="125.42964"
+       y="42.295174" />
+    <rect
+       style="opacity:0.68999999;fill:#808000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.02199256;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4125"
+       width="115.71171"
+       height="87.224129"
+       x="241.16423"
+       y="95.967545" />
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="162.00841"
+       y="139.78975"
+       id="text4127"><tspan
+         sodipodi:role="line"
+         id="tspan4129"
+         x="162.00841"
+         y="139.78975">Widget 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="277.55298"
+       y="140.75429"
+       id="text4139"><tspan
+         sodipodi:role="line"
+         id="tspan4141"
+         x="277.55298"
+         y="140.75429">Widget 3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="77.18676"
+       y="141.3167"
+       id="text4143"><tspan
+         sodipodi:role="line"
+         id="tspan4145"
+         x="77.18676"
+         y="141.3167">Widget 1</tspan></text>
+    <rect
+       style="opacity:1;fill:#550000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.42685878;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4161"
+       width="289.32919"
+       height="195.55162"
+       x="64.144829"
+       y="264.48831" />
+    <rect
+       style="opacity:0.68999999;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.2911396;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4163"
+       width="61.858795"
+       height="24.553638"
+       x="81.501961"
+       y="349.98727" />
+    <rect
+       style="opacity:0.68999999;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.23373246;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4165"
+       width="75.481712"
+       height="194.8582"
+       x="144.56343"
+       y="264.83502" />
+    <rect
+       style="opacity:0.68999999;fill:#808000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.02199256;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4167"
+       width="115.71171"
+       height="87.224129"
+       x="220.42442"
+       y="318.65207" />
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="164.65016"
+       y="363.64334"
+       id="text4169"><tspan
+         sodipodi:role="line"
+         id="tspan4171"
+         x="164.65016"
+         y="363.64334">Widget 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="257.30594"
+       y="363.43881"
+       id="text4173"><tspan
+         sodipodi:role="line"
+         id="tspan4175"
+         x="257.30594"
+         y="363.43881">Widget 3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="93.447655"
+       y="364.00122"
+       id="text4177"><tspan
+         sodipodi:role="line"
+         id="tspan4179"
+         x="93.447655"
+         y="364.00122">Widget 1</tspan></text>
+    <rect
+       style="opacity:1;fill:#550000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.42685878;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4183"
+       width="289.32919"
+       height="195.55162"
+       x="61.780247"
+       y="509.36194" />
+    <rect
+       style="opacity:0.68999999;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.2911396;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4185"
+       width="61.858795"
+       height="24.553638"
+       x="62.310822"
+       y="594.8609" />
+    <rect
+       style="opacity:0.68999999;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.23373246;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4187"
+       width="75.481712"
+       height="194.8582"
+       x="126.19885"
+       y="509.70865" />
+    <rect
+       style="opacity:0.68999999;fill:#808000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.02199256;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4189"
+       width="115.71171"
+       height="87.224129"
+       x="202.05984"
+       y="563.5257" />
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="146.28558"
+       y="608.51697"
+       id="text4191"><tspan
+         sodipodi:role="line"
+         id="tspan4193"
+         x="146.28558"
+         y="608.51697">Widget 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="238.94136"
+       y="608.31244"
+       id="text4195"><tspan
+         sodipodi:role="line"
+         id="tspan4197"
+         x="238.94136"
+         y="608.31244">Widget 3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="74.256508"
+       y="608.87488"
+       id="text4199"><tspan
+         sodipodi:role="line"
+         id="tspan4201"
+         x="74.256508"
+         y="608.87488">Widget 1</tspan></text>
+    <rect
+       style="opacity:1;fill:#550000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.42685878;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4203"
+       width="289.32919"
+       height="195.55162"
+       x="61.212029"
+       y="731.68286" />
+    <rect
+       style="opacity:0.68999999;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.2911396;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4205"
+       width="61.858795"
+       height="24.553638"
+       x="69.742607"
+       y="817.18182" />
+    <rect
+       style="opacity:0.68999999;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.23373246;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4207"
+       width="75.481712"
+       height="194.8582"
+       x="139.63065"
+       y="732.0296" />
+    <rect
+       style="opacity:0.68999999;fill:#808000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.02199256;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209"
+       width="115.71171"
+       height="87.224129"
+       x="223.49162"
+       y="785.84662" />
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="159.71738"
+       y="830.83789"
+       id="text4211"><tspan
+         sodipodi:role="line"
+         id="tspan4213"
+         x="159.71738"
+         y="830.83789">Widget 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="260.37317"
+       y="830.63336"
+       id="text4215"><tspan
+         sodipodi:role="line"
+         id="tspan4217"
+         x="260.37317"
+         y="830.63336">Widget 3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.35261822px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="81.688293"
+       y="831.1958"
+       id="text4219"><tspan
+         sodipodi:role="line"
+         id="tspan4221"
+         x="81.688293"
+         y="831.1958">Widget 1</tspan></text>
+    <rect
+       style="opacity:1;fill:#854f4f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.375;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:9.5, 2.375;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5200"
+       width="235.02068"
+       height="133.23271"
+       x="434.64359"
+       y="127.7711" />
+    <rect
+       style="opacity:1;fill:#d40000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.84392619;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4225"
+       width="182.48306"
+       height="103.44926"
+       x="461.99503"
+       y="141.55104" />
+    <text
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="522.92224"
+       y="195.15578"
+       id="text5196"><tspan
+         sodipodi:role="line"
+         id="tspan5198"
+         x="522.92224"
+         y="195.15578">Widget</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 437.74675,193.69241 L 458.19912,193.69241"
+       id="path5261" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="410.03708"
+       y="191.38327"
+       id="text5263"><tspan
+         sodipodi:role="line"
+         id="tspan5265"
+         x="410.03708"
+         y="191.38327"
+         style="text-align:center;text-anchor:middle">Margin</tspan><tspan
+         sodipodi:role="line"
+         x="410.03708"
+         y="206.38327"
+         id="tspan5267"
+         style="text-align:center;text-anchor:middle">left</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 646.35343,190.76499 L 666.8058,190.76499"
+       id="path5269" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="696.30945"
+       y="191.25815"
+       id="text5271"><tspan
+         sodipodi:role="line"
+         id="tspan5273"
+         x="696.30945"
+         y="191.25815"
+         style="text-align:center;text-anchor:middle">Margin</tspan><tspan
+         sodipodi:role="line"
+         x="696.30945"
+         y="206.25815"
+         id="tspan5275"
+         style="text-align:center;text-anchor:middle">right</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.68311709px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 552.50916,130.10973 L 552.50916,139.65381"
+       id="path5277" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.68311709px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 553.13915,247.5032 L 553.13915,257.04728"
+       id="path5281" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="550.72766"
+       y="106.25446"
+       id="text5283"><tspan
+         sodipodi:role="line"
+         id="tspan5285"
+         x="550.72766"
+         y="106.25446"
+         style="text-align:center;text-anchor:middle">Margin</tspan><tspan
+         sodipodi:role="line"
+         x="550.72766"
+         y="121.25446"
+         id="tspan5287"
+         style="text-align:center;text-anchor:middle">top</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="553.815"
+       y="275.15594"
+       id="text5289"><tspan
+         sodipodi:role="line"
+         id="tspan5291"
+         x="553.815"
+         y="275.15594"
+         style="text-align:center;text-anchor:middle">Margin</tspan><tspan
+         sodipodi:role="line"
+         x="553.815"
+         y="290.15594"
+         id="tspan5293"
+         style="text-align:center;text-anchor:middle">bottom</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="408.41748"
+       y="114.8436"
+       id="text5295"><tspan
+         sodipodi:role="line"
+         id="tspan5297"
+         x="408.41748"
+         y="114.8436">LayoutItem</tspan></text>
+  </g>
+</svg>

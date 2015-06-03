@@ -1,0 +1,83 @@
+% titlepage is included by Makefile from parent directory
+
+
+\pagebreak
+\section*{Preface}
+ RexIO is library for console (rogue-like) user interfaces for
+ applications such as adventure games, full-screen editors, business
+ software etc. providing support for vast variety of terminals and
+ connection types (unified interface for local and remote terms,
+ support for TERMINFO® database and more).  
+
+ It also provides extensive UI development framework including support
+ for forms, toolbars, subwindows frames etc, full internationalization
+ support including UNICODE™ compliance as well as CJK character
+ properties. Library combines reboustness of modern GUI toolkits and
+ efficiency of console-based IO providing comprehensive solution for
+ virtually any modern software platform.
+
+ This paper is an introductory tutorial covering several use cases of
+ this library as well as description of it's basic features, concepts
+ and internat structure. Please refer to enclosed source code listing
+ and reference manual when anything is unclear.
+ 
+ \vspace{\fill}
+\pagebreak
+ \subsection*{Symbols}
+ \important means, that specific piece of information is important
+ \vspace{0.4cm}
+
+ \fullcode indicates a complete program source code, that may be
+ compiled and run
+ \vspace{0.4cm}
+
+ \advanced indicates an advanced topic, that is not necessary in basic
+ usage of library
+ \vspace{\fill}
+\pagebreak
+\tableofcontents 
+ \vspace{\fill}\cleardoublepage
+\lstset{commentstyle=\textit,stepnumber=1 ,keywordstyle=\bfseries,
+    showstringspaces=false}
+\lstset{numbers=left,numbersep=0.1cm,numberstyle=\tt,tabsize=4,
+    basicstyle=\tt\footnotesize,texcl=false}
+\lstset{language=C++,breaklines=true}
+\pagestyle{headings}
+\section{General layout of library}
+\input{layout}
+\cleardoublepage
+\section{Compiling}
+\input{compiling}
+\cleardoublepage
+
+\section{Screen operations basics}
+\input{basics}
+\cleardoublepage
+
+\section{Advanced user interface using Scr::Tk::Widget's}
+\input{advanced}
+\cleardoublepage
+
+
+
+\section{References}
+\input{references}
+\cleardoublepage
+
+\printindex
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

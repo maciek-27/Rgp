@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="server"
+			  xmlns:client="server"
+			  elementFormDefault="qualified" attributeFormDefault="unqualified"
+			  xmlns="server">
+
+	<xs:complexType name="text_msg">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lang" type="xs:language" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+		<!--<xs:attribute name="lang" type="language" use="optional" default="en" />-->
+	</xs:complexType>
+
+	<xs:element name="auth_methods">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="auth_method" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="start_tls">
+		<xs:complexType>
+			<xs:attribute name="required" use="optional">
+				<xs:simpleType>
+					<xs:restriction base='xs:string'>
+						<xs:enumeration value='true'/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="hello">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="start_tls" minOccurs="0" maxOccurs="1"/>
+				<xs:elescment name="server_name" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="auth_methods" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<!-- All errors should cause immediate connection separation without further notice -->
+	<xs:element name="error">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="text_msg" minOccurs="0" maxOccurs="1" type="text_msg"/>
+				<!-- different errors can be identified by the below element -->
+				<xs:any minOccurs="1" maxOccurs="1" />
+			</xs:sequence>
+			<xs:attribute name="pointer" type="xs:unsignedInt" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:complexType name="pointer">
+		<xs:attribute name="pointer" type="xs:unsignedInt" use="required" />
+	</xs:complexType>
+	
+	
+	<xs:element name="acknowledgement" type="pointer" />
+
+	<xs:element name="xftp">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="hello"/>
+				<xs:element ref="acknowledgement"/>
+				<xs:element ref="error"/>
+
+<!--				<xs:choice minOccurs="1" maxOccurs="unbounded">
+					<xs:element ref="cstream_request"/>
+					<xs:element ref="dstream_request"/>
+				</xs:choice>
+				<xs:choice minOccurs="1" maxOccurs="unbounded">
+					<xs:element ref="list"/>
+					<xs:element ref="chdir"/>
+					<xs:element ref="copy"/>
+					<xs:element ref="move"/>
+					<xs:element ref="delete"/>
+					<xs:element ref="create"/>
+				</xs:choice>-->
+			</xs:choice>
+			<xs:attribute name="version" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:float">
+						<xs:pattern value="\d\.\d\d?"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+		<xs:unique name="seq_key">
+			<xs:selector xpath=".//*"/>
+			<xs:field xpath="@id"/>
+		</xs:unique>
+	</xs:element>
+	
+	
+</xs:schema>

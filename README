@@ -1,0 +1,39 @@
+RexIO beta release README file
+
+Content:
+1.Compiling
+2.Running
+3.Documentation
+4.Licensing
+
+
+
+1. Compiling
+
+You need cmake build system. to prepare UNIX makefiles type
+
+cmake .
+
+then to compile type
+
+make
+
+To install type
+
+make install
+
+
+2. Running
+
+5 primitive test cases included in test/* subdirectories.
+
+
+3. Documentation
+
+Documentation may be generated using makefile in doc
+subdirectory.
+
+
+4. Licensing
+
+See attached COPYING file

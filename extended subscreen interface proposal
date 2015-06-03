@@ -1,0 +1,94 @@
+class Scr::Screen
+    {
+		/*!
+		  \param _y_offset vertical offset from top edge of this
+		  screen to top edge of new SubScreen.
+		  \param _x_offset horizontal offser
+		  \param _h height
+		  \param _w with
+		  \return  pointer to new BufferedSubScreen
+		  (programmer will have to free it's
+		  resources to prevent memory leak and other errors).
+		  BufferedSubScreen differs from basic SubScreen in many ways,
+		  in particular it has it's own buffer and therefore it's
+		  operations does not affect parent screen unless it's
+		  refreshed. 
+	  
+		  \exception Scr::Screen::SubscreenOutOfRange
+		  is thrown when too big subscreen requested or inapropriate
+		  position specified
+		*/
+		virtual Screen *
+		CreateBufferedSubScreen(Uint _y_offset,
+								Uint _x_offset, Uint _h,
+								Uint _w)throw(SubscreenOutOfRange);
+
+	
+		/*!
+		  \param _y_offset vertical offset from top edge of this
+		  screen to top edge of new SubScreen.
+		  \param _x_offset horizontal offser
+		  \param _h height
+		  \param _w with
+		  \param ext_left extended range-checking limit
+		  \param ext_right extended range-checking limit
+		  \param ext_top extended range-checking limit
+		  \param ext_bottom extended range-checking limit
+		  \return  pointer to new SmartSubScreen
+		  (programmer will have to free it's
+		  resources to prevent memory leak and other errors).
+		  Key differnces between SmartSubScreen and basic SubScreen is,
+		  that it:
+		  - shifts contents up by ext_top and left by ext_left
+		  - allows writing space of (ext_left + _w + ext_right)
+		  horizontal and (ext_top + _h + ext_bottom) vertical (so it's
+		  internal size is bigger than displayed size). It crops
+		  everything, that does not fit in this internal size, but
+		  fits in external. It throws exceptions connected w/ range
+		  only if internal range limit is broken.	  
+	  
+		  \exception Scr::Screen::SubscreenOutOfRange
+		  is thrown when too big subscreen requested or inapropriate
+		  position specified	  
+		*/
+		virtual Screen *
+		CreateExtendedSubScreen(Uint _y_offset,
+								Uint _x_offset, Uint _h,
+								Uint _w,Uint ext_left, Uint ext_right, Uint ext_top,
+								Uint ext_bottom)
+			throw(SubscreenOutOfRange);
+
+	
+		/*!
+		  \param _y_offset vertical offset from top edge of this
+		  screen to top edge of new SubScreen.
+		  \param _x_offset horizontal offser
+		  \param _h height
+		  \param _w with
+		  \param ext_left left shift_and_crop of content
+		  \param ext_top top shift_and_crop of content
+		  \return  pointer to new SmartSubScreen
+		  (programmer will have to free it's
+		  resources to prevent memory leak and other errors).
+		  Key differnces between SmartSubScreen and basic SubScreen is,
+		  that it:
+		  - shifts contents up by ext_top and left by ext_left
+		  - turns of range checking
+		  - crops out-of-range content
+	  
+		  \exception Scr::Screen::SubscreenOutOfRange
+		  is thrown when too big subscreen requested or inapropriate
+		  position specified
+
+		  \note no range checking means, that programmer gets no
+		  information on result of his actions
+		*/
+
+		virtual Screen *
+		CreateUnlimitedExtendedSubScreen(Uint _y_offset,
+										 Uint _x_offset, Uint _h,
+										 Uint _w,Uint ext_left,
+										 Uint ext_top
+			)throw(SubscreenOutOfRange);
+
+    }

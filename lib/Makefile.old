@@ -1,0 +1,6 @@
+all:
+	@make -C screen
+	@make -C toolkit
+clean:
+	@make -C screen clean
+	@make -C toolkit clean

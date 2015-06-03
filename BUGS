@@ -1,0 +1,113 @@
+ID	Reporter	Status		Assigned/Changed by
+
+101	rush		Fixed		rush	
+	Description:
+	Japanese names do not property get displayed in the chat window
+	in test/5
+	Resolution:
+	Fixing SubScreen to support wide characters.
+
+102	rush		Unknown
+	Description:
+	Mysterious exception when putting rexio application into background.
+	Reproduce by "Ctrl+Z" and then "bg".
+
+103	rush		Fixed in 203   mzg
+	Description:
+	Huge number of unnecessary redraws. Can be most easily spot by 
+	starting test 5 on rexio.org and connecting remotely.
+	Resolution:
+	Fixed RedrawRequest so, that everything above specified object
+	is redrawn too.
+
+104	mzg	        Partially fixed in 222	mzg
+	Description:
+	Focus passed to hidden windows. 
+	How to reproduce? login remotely to test/5. While chat active, press
+	tab, type something, then press [Enter]
+	Temporary solution:
+	if hidden, try pass focus to next (problem is, that this causes 
+	infinite loop when everything is hidden in specific object)
+
+105	mzg  	        Open
+	Description:
+	RexIO refuses connection using puTTY telnet client (window disappears).
+
+106	mzg   	        Open
+	Description
+	stack trace describing code fails under AMD64 when Exception thrown,
+	i.e.:
+	      Stack trace:
+	       1: 0x2b41303893d5 <gsignal+53> (/lib/libc.so.6)
+	      End of stack trace
+
+107     mzg             Open
+	Description
+	Dictionary::tree_partial_find crashes when NULL string passed as argument. should it work at all?
+
+108     mzg             Open
+	Description
+	Server crashes in Subscreen::Clear.
+	Stack trace:	
+
+#1  0x00002abf9ee1376e in abort () from /lib/libc.so.6
+#2  0x00002abf9e711324 in __gnu_cxx::__verbose_terminate_handler ()
+   from /usr/lib/gcc/x86_64-pc-linux-gnu/4.1.2/libstdc++.so.6
+#3  0x00002abf9e70f4b6 in ?? ()
+   from /usr/lib/gcc/x86_64-pc-linux-gnu/4.1.2/libstdc++.so.6
+#4  0x00002abf9e70f4e3 in std::terminate ()
+   from /usr/lib/gcc/x86_64-pc-linux-gnu/4.1.2/libstdc++.so.6
+#5  0x00002abf9e70f4f6 in ?? ()
+   from /usr/lib/gcc/x86_64-pc-linux-gnu/4.1.2/libstdc++.so.6
+#6  0x00002abf9e70ef78 in __cxa_call_unexpected ()
+   from /usr/lib/gcc/x86_64-pc-linux-gnu/4.1.2/libstdc++.so.6
+#7  0x00002abf9db82a11 in Scr::SubScreen::Clear (this=0x6dd980)
+    at /home/mzg/rexio/branches/1.0/lib/screen/src/subscreen/subscreen.c++:21
+#8  0x00002abf9db5a7be in Scr::operator<< (screen=@0x6dd980, whatto=@0x41800b9c)
+    at /home/mzg/rexio/branches/1.0/lib/screen/src/core/screen.c++:113
+#9  0x00002abf9ddddb83 in Scr::Tk::Window::OnRedraw (this=0x42002ae8, 
+    screen=@0x6dd980) at /home/mzg/rexio/branches/1.0/lib/toolkit/src/window.c++:188
+#10 0x00002abf9ddde174 in Scr::Tk::Window::RedrawRequest (this=0x42002250, 
+    widget=@0x42002330)
+    at /home/mzg/rexio/branches/1.0/lib/toolkit/src/window.c++:93
+#11 0x00002abf9dddd9de in Scr::Tk::Window::RedrawRequest (this=0x42002250)
+    at /home/mzg/rexio/branches/1.0/lib/toolkit/src/window.c++:105
+#12 0x000000000041c07d in Scr::Demo::MessageEvent (this=0x42002240, 
+    info=@0x41801320, msg=@0x41801e38)
+    at /home/mzg/rexio/branches/1.0/test/5/src/demo.c++:87
+#13 0x0000000000423bd6 in Server::MessageEvent (this=0x630f10, info=@0x41801320, 
+    msg=@0x41801e38) at /home/mzg/rexio/branches/1.0/test/5/src/netconn.c++:162
+#14 0x000000000041c676 in Scr::Demo::MessageInput::OnKeyDown (this=0x41801d80, key=
+      {static altMask = <optimized out>, static controlMask = <optimized out>, static    
+       specialMask = 1442840576, static basicKeyMask = <optimized out>, key = 1444872234})
+    at /home/mzg/rexio/branches/1.0/test/5/src/demo.c++:28
+#15 0x00002abf9dddd731 in Scr::Tk::Window::OnKeyDown (this=0x41801ae8, key=
+      {static altMask = <optimized out>, static controlMask = <optimized out>, static
+       specialMask = 1442840576, static basicKeyMask = <optimized out>, key = 1444872234})
+    at /home/mzg/rexio/branches/1.0/lib/toolkit/src/window.c++:214
+#16 0x00002abf9dddd731 in Scr::Tk::Window::OnKeyDown (this=0x41801250, key=
+      {static altMask = <optimized out>, static controlMask = <optimized out>, static specialMask = 1442840576, static basicKeyMask = <optimized out>, key = 1444872234})
+    at /home/mzg/rexio/branches/1.0/lib/toolkit/src/window.c++:214
+#17 0x00002abf9dddc932 in Scr::Tk::RootWindow::OnKeyDown (this=0x41801240, key=
+      {static altMask = <optimized out>, static controlMask = <optimized out>, static specialMask = 1442840576, static basicKeyMask = <optimized out>, key = 1444872234})
+    at /home/mzg/rexio/branches/1.0/lib/toolkit/src/rootwindow.c++:23
+#18 0x00002abf9db7c445 in Scr::RemoteScreen::ProcessConnection (this=0x660460)
+    at /home/mzg/rexio/branches/1.0/lib/screen/src/real/remotescreen.c++:274
+#19 0x00002abf9db583dc in Scr::Connection::Start (this=0x41801240)
+    at /home/mzg/rexio/branches/1.0/lib/screen/src/core/connection.c++:91
+#20 0x00002abf9dddc285 in Scr::Tk::RootWindow::Start (this=0x41801240)
+    at /home/mzg/rexio/branches/1.0/lib/toolkit/src/rootwindow.c++:89
+#21 0x00002abf9db581f3 in Scr::Connection::Start (this=0x41801240, argc=2, 
+    argv=0x7fff0d1ac648)
+    at /home/mzg/rexio/branches/1.0/lib/screen/src/core/connection.c++:79
+#22 0x00002abf9dddc557 in Scr::Tk::RootWindow::Start (this=0x41801240, argc=2, 
+    argv=0x7fff0d1ac648)
+    at /home/mzg/rexio/branches/1.0/lib/toolkit/src/rootwindow.c++:84
+#23 0x000000000041697c in starter (in=@0x6600f0, out=@0x660210)
+    at /home/mzg/rexio/branches/1.0/test/5/src/main.c++:40
+#24 0x0000000000423f14 in ServeConnnection (_conn=0x6631d0)
+    at /home/mzg/rexio/branches/1.0/test/5/src/netconn.c++:50
+#25 0x00002abf9e028047 in start_thread () from /lib/libpthread.so.0
+#26 0x00002abf9eea22fd in clone () from /lib/libc.so.6
+#27 0x0000000000000000 in ?? ()
+

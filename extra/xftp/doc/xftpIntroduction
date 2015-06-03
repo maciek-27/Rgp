@@ -1,0 +1,85 @@
+Introduction to eXtensible File Transfer Protocol
+
+Damian Kaczmarek / Maciej Kamiński
+
+Designing a modern file transfer protocol based on Stream Control Transmission
+Protocol[1].
+
+This document should explain the background behind the decision to design such
+a protocol and provide a short overview of how it might be implemented.
+
+1. PREFACE
+During a long time of utilizing different file transfer protocols, it has
+become clear that their capabilities are not up to the challenges of today's
+information society and provide unnecessary limitations.
+
+Currently the most widely adopted protocol is FTP[2] and it suffers from
+several drawbacks:
+-Passwords and file contents are sent in clear text, which can be intercepted 
+ by eavesdroppers. There are protocol enhancements that circumvent this, for
+ instance by using SSL or TLS, but none of which are widely adopted.
+-Multiple TCP/IP connections are used, one for the control connection, and one
+ for each download, upload, or directory listing. Firewalls may need additional
+ logic and or configuration changes to account for these connections.
+-FTP is a high latency protocol due to the number of commands needed to
+ initiate a transfer.
+-No integrity check on the client side. If a transfer is interrupted, the
+ receiver has no way to know if the received data is complete or not.
+-No metadata support. It has been mostly criticized for lack of a timestamp
+ field because uploaded files were given a new timestamp.
+-Not VFS(Virtual File System) friendly.
+-A lot of historic aspects covered in the protocol.
+
+One of the other more widely adopted protocols is the SSH file transfer
+protocol(SFTP[3]). It covers a lot of FTP's problems.
+-It's well secured, based on the award winning SSL protocol.
+-It uses one TCP connection and thus is easily routable.
+-SFTP defines UNIX-like attributes.
+-It provides an interface for low level file operations which can be easily
+ utilized to create VFS.
+However it's also not free of defects: 
+-Security is good but sometimes raw throughput is needed and this SFTP's secure
+ model cannot provide.
+-There are portability issues concerning SFTP since it is partially
+ bound to UNIX, i.e. attributes are a copy of UNIX ones(although there are
+ private use fields for custom data). The basic file operations also try to
+ reassemble UNIX philosophy.
+-It has other interoperability issues, such as the length of the filepath
+ is bound to maximum 256 bytes while in different systems the path could
+ theoretically have arbitrary value. In GLIBC it is 4096 bytes, in
+ Microsoft Windows Vista it is 260 bytes.
+-It is not an Internet standard and so has little chance to win over FTP.
+
+Other file transfer solutions can include NFS, Samba: none of which are
+really used in a standard client-server model but rather in a specialized
+environment.
+
+2. THE SOLUTION
+With the above wisdom, it is possible to design a protocol that will have
+the following capabilities:
+-Plain or encrypted authentification with optional data TLS encryption.
+-Independant data streams in one connection.
+-VFS alike with relatively low level file operations. Concurrent streams
+ allow for handling multiple files simultaneously.
+-Simple request and response model with data structures exchanged using
+ eXtensible Markup Language and UTF-8 text encoding format.
+-Metadata system allowing different systems to fully exchange their metadata.
+-Thanks to XML, it can be an easily extensible protocol, and thanks to it,
+ the name is "eXtensible File Transfer Protocol".
+
+SCTP, as described in [1], is a new transmission protocol based on TCP and UDP
+and it intruduces several interesting features. Apart from fixing the
+security problems of TCP, it provides a way to circumvent the famous
+TCP's Head-Of-Line-Blocking problem and makes it possible to separate logical
+data streams. Another interesting feature is multi-homing which can make
+use of several connection routes at once and in case of one failing, switch
+to another. Unfortunately it has one and pretty strong flaw, it is not widely
+adopted. To get around this, a failover multiplexed TCP connection will
+be provided.
+
+
+Sources:
+-[1] http://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol
+-[2] http://en.wikipedia.org/wiki/File_Transfer_Protocol
+-[3] http://en.wikipedia.org/wiki/SSH_file_transfer_protocol
+-http://www.openssh.org/txt/draft-ietf-secsh-filexfer-02.txt

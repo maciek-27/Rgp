@@ -1,0 +1,49 @@
+CFLAGS =  -ggdb -ansi -Wall -pedantic -pedantic-errors -fPIC
+LIBS = -L.. -lscreen
+
+EXES_PATH =bin
+
+OBJECTS_PATH = objects
+SOURCES_PATH = src
+INCLUDES_PATH = ../../include
+LOCAL_INCLUDES_PATH = include/
+
+
+LOCAL_OBJECTS  =$(OBJECTS_PATH)/widget.o $(OBJECTS_PATH)/rootwindow.o \
+$(OBJECTS_PATH)/window.o $(OBJECTS_PATH)/activewidget.o  $(OBJECTS_PATH)/label.o\
+$(OBJECTS_PATH)/widgetgroup.o $(OBJECTS_PATH)/boxgroup.o\
+$(OBJECTS_PATH)/horizontalgroup.o $(OBJECTS_PATH)/verticalgroup.o\
+$(OBJECTS_PATH)/button.o $(OBJECTS_PATH)/checkbox.o
+
+FULLNAME = libscreentoolkit.so.1.0.0
+NAME = libscreentoolkit.so
+all: $(FULLNAME) $(NAME)
+	@echo " [I] All modules built "
+
+
+$(OBJECTS_PATH)/%.o: $(SOURCES_PATH)/%.c++  ../../include/screen.h++   ../../include/toolkit.h++
+	@echo " [C] Compiling "`pwd`"/$@ "
+	@g++ -c $(CFLAGS) -I $(INCLUDES_PATH) -I $(LOCAL_INCLUDES_PATH) $< -o $@
+
+$(FULLNAME): $(OBJECTS_PATH)  $(LOCAL_OBJECTS)
+	@echo " [L] Linking Screen Toolkit library module"
+	@g++ -g -shared -Wl,-soname,$(NAME) -o $(FULLNAME) $(LOCAL_OBJECTS)  -lc
+
+$(NAME):
+	@echo " [I] Updating symlinks "
+	@ln -s $(FULLNAME) $(NAME)
+	@cd .. ; ln -s toolkit/$(NAME)
+
+clean:
+	@echo " [I] deleting objects "
+	@rm -rdf $(OBJECTS_PATH)
+	@echo " [I] deleting LIBRARY "
+	@rm -f $(NAME) ../$(NAME) $(FULLNAME)
+	@echo " [I] cleaned "
+
+install:
+	@echo " [I] this is a beta version. you can't install it "
+
+$(OBJECTS_PATH):
+	@echo " [I] Creating objects directiory "
+	@mkdir $(OBJECTS_PATH)

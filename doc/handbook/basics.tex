@@ -1,0 +1,243 @@
+\subsection {Typical program layout - message processing pipeline}
+Typical software program consists of many functional components, that
+is i.e. some file-reading component, networking subsystem, many other
+items... and last, but not least, user interface. In object oriented
+languages, such as C++, many of them are implemented as classes, so no
+surprise, RexIO is designed to let programmers take advantage of OOP
+in user interface design. 
+
+As a result each UI element is implemented as OBJECT, and each
+customized element is represented by custom class. Therefore designing
+user interface is explicitly designing class implementing specific
+interface. Typical UI design is as follows
+
+{\footnotesize\begin{verbatim}
+Specific window type ``MyWindow'' is a RootWindow
+  When it is resized, 
+    it does some action
+
+  When key is pressed, 
+    it stores it's code if it is a letter
+    program quits if it is Esc
+
+  When it has to display its contents
+    it displays stored value
+\end{verbatim}}
+
+Design above may be directly converted to C++ code as follows
+
+\begin{lstlisting}
+class MyWindow: public RootWindow
+{
+private:
+	int code;
+public:
+	MyWindow()
+		:RootWindow(std::cin,std::cout)
+	{
+		code=0;
+	}
+
+
+	void OnResize()
+	{
+		;//do something
+	}
+
+	void  OnKeyDown(Key key)
+	{
+		if (key == Key::Escape)
+			Exit(0);
+		else if (key.IsABasicKey())
+			code=key;
+	}
+
+	void OnRedraw(Scr::Screen &screen)
+	{
+		screen << Clear << GotoYX(2,2) << code << Refresh;
+	}
+
+	~MyWindow(){;}
+};//MyWindow
+\end{lstlisting}
+
+\index{class}
+Code above depicts almost complete RexIO application. Full program is as follows:
+\fullcode
+\begin{lstlisting}
+#include<rexio/tk/toolkit.h++>
+#include<iostream>
+using namespace std;
+using namespace Scr;
+using namespace Scr::Tk;
+using namespace Scr::Control;
+
+class MyWindow: public RootWindow
+{
+private:
+	int code;
+public:
+	MyWindow()throw()  		// empty specification of
+							// throw() means, that function
+        					// is not allowed to throw
+							// any exceptions.
+		:RootWindow(cin,cout)
+	{
+		code=0;
+	}
+
+	void OnResize()throw()
+	{
+		;//do something
+		RootWindow::OnResize();
+	}
+
+	void  OnKeyDown(Key key)throw()
+	{
+		if (key == Key::Escape)
+			Exit(0);
+		else if (key.IsABasicKey())
+			code=key;
+		RootWindow::OnKeyDown(key);
+	}
+
+	void OnRedraw(Scr::Screen &screen)throw()
+	{
+		try
+		{
+			screen << Clear << GotoYX(2,2) << code << Refresh;
+		}
+		catch (...)
+		{
+			Exit(1);
+		}
+	}
+	
+	~MyWindow()throw(){;}
+};//MyWindow
+
+int main (Uint argc,char ** argv)
+{
+	RootWindow * app = new MyWindow;	
+	int result = app->Start(argc, argv);	
+	delete app;
+	return result;
+}
+/*end of main function of program*/ 
+\end{lstlisting}
+
+As you can see, line 
+\vspace{-10pt}\begin{verbatim}
+#include<rexio/tk/toolkit.h++>
+\end{verbatim}
+\vspace{-10pt}includes most general library header file (please note, that this file
+includes virtually ,,everything'' - there are also files declaring specific
+classes)
+
+\index{namespace}
+lines 
+\vspace{-10pt}\begin{verbatim}
+using namespace std;
+using namespace Scr;
+using namespace Scr::Tk;
+using namespace Scr::Control;
+\end{verbatim}
+\vspace{-10pt}aren't necessary to make code working, however they allow to simplify
+many statements.
+
+Keyword
+\vspace{-10pt}\begin{verbatim}
+throw
+\end{verbatim}
+\vspace{-10pt}is used in whole library to specify allowed exception sets, and
+therefore enable controlling exception flow. 
+
+Sometimes, when redefining default behavior of windows (especially
+RootWindow) it is recommended to call default function after (sometimes
+before) custom processing:\vspace{-10pt}
+\begin{verbatim}
+RootWindow::OnKeyDown(key);
+\end{verbatim}
+
+\vspace{\fill}
+\pagebreak
+\subsection {Basic character output}
+\index{output}
+
+\index{stream}
+In previous section we have discussed basic printing text
+using following sequence
+\begin{lstlisting}
+screen << Clear << GotoYX(2,2) << "Hello World" << Refresh;//>>
+\end{lstlisting}
+
+The same effect may be obtained using plain virtual function calls
+\begin{lstlisting}
+screen.Clear();
+screen.GotoYX(2,2);
+screen.AddText("Hello World");
+screen.Refresh();
+\end{lstlisting}
+
+
+Please note, that there are multiple (to be precise: 6) variants of
+AddText: let us consider two of them
+\begin{lstlisting}
+virtual void AddText(const char * text)   
+virtual void AddText(const wchar_t * text) 
+\end{lstlisting}
+
+One of them accept C-style string with one-byte-per-character, and
+second accepts wchar\_t (for Linux 4 byte, for Windows 2 byte). 
+
+\index{Jožin z bažin}
+The second may be used to print text with diacritics. i.e. to print
+,,Jožin z bažin'' you have to type following code:
+
+\noindent{\tt\scriptsize screen.AddText(L"Jožin z bažin");}
+
+
+\index{UCS}
+However as many real software solutions depend on UTF-8 encoding,
+specific functionality \textbf{is provided out of the box} 
+\begin{lstlisting}
+screen.AddText("Jo\xC5\xBEin z ba\xC5\xBEin");
+\end{lstlisting}
+does exactly, what you may expect
+\index{UTF-8}
+\index{color}
+If you want to emphasize "bažin", you may use following code to add colors:
+\begin{lstlisting}
+screen << "Jo\xC5\xBEin z " << Fg::Bright << Fg::Red << "ba\xC5\xBEin";//>>
+\end{lstlisting}
+
+
+\index{stream}
+SetFgStyle and SetFgColor functions may be called instead of using
+this iostream-like syntax. Maybe you won't gain any bigger performance
+using these functions, but certainly you may improve control of
+overall layout. Also there are functions like Screen::HorizontalLine
+simplifying for example box drawing. 
+
+\important
+Each of these  functions provides range checking, and throws specific
+exception when range is violated. It is recommended to use try-catch
+statements to detect such problems and provide rock-solid programs that
+virtually never fail. 
+
+%w razie wolnego czasu coś o CJK napisać trzeba
+
+\vspace{\fill}
+\pagebreak
+
+
+\subsection {Component-based hierarchical layout}
+
+
+\index{component}
+
+To improve your understanding of hierarchical layout (basics of
+Scr::Tk::Widget usage) please consider this piece of code as example.
+
+\fullcode
+\lstinputlisting{../../test/3/src/test.c++}

@@ -1,0 +1,6 @@
+to generate docs you need following:
+- pdfLaTeX
+- doxygen
+- pdfjam
+- dia
+- inkscape

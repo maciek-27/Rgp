@@ -1,0 +1,47 @@
+To compile this software library you need:
+
+\begin{itemize}
+\item POSIX compatible operating system
+\item C++ compiler
+\item boost libraries (memory and threads)
+\item cmake build system
+\end{itemize}
+
+When these dependencies are satisfied, you may try to generate UNIX
+makefile using following command (dot is important - it represents
+,,current path'') in root directory.
+\index{cmake}
+\index{compile}
+\begin{verbatim}
+cd **Directory, where RexIO is unpacked**
+cmake .
+\end{verbatim}
+
+When they are finally  generated, program is compiled in usual way
+
+\begin{verbatim}
+make
+\end{verbatim}
+
+\index{install}
+When 1.0 release candidate will be ready, install target will be added
+enabling you to install this library in your system with all other
+libraries, and use it for all your programs by just typing
+
+\begin{verbatim}
+make install
+\end{verbatim}
+
+When for some reason you will decide, you do not need this library
+anymore, you may type
+
+\begin{verbatim}
+make uninstall
+\end{verbatim}
+
+
+\subsection{Linking your programs against RexIO library}
+
+\begin{verbatim}
+g++ yourprogram youroptions -lrexio -lrexiotk
+\end{verbatim}

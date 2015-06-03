@@ -1,0 +1,63 @@
+CFLAGS =  -ggdb -Wall -ansi -std=c++98 -fPIC -DDO_VALIDATE_UTF_8_OUTPUT
+# c++98 instead of gnu++98 to disable GNU extensions
+
+OBJECTS_SUBDIRECTORIES = core real subscreen
+OBJECTS_PATH = objects
+SOURCES_PATH = src
+INCLUDES_PATH =  -I ../../include -I include
+
+
+LOCAL_OBJECTS  =$(OBJECTS_PATH)/core/commons.o\
+		$(OBJECTS_PATH)/core/screen.o\
+		$(OBJECTS_PATH)/core/connection.o\
+		$(OBJECTS_PATH)/core/screenbase.o\
+		$(OBJECTS_PATH)/core/screenbuffer.o\
+		$(OBJECTS_PATH)/core/displaystyle.o\
+		$(OBJECTS_PATH)/real/localscreen.o\
+		$(OBJECTS_PATH)/real/vt100compatible.o\
+		$(OBJECTS_PATH)/real/remotescreen.o\
+		$(OBJECTS_PATH)/real/genericscreen.o\
+		$(OBJECTS_PATH)/subscreen/subscreen.o\
+		$(OBJECTS_PATH)/subscreen/extendedbase.o\
+		$(OBJECTS_PATH)/subscreen/extended.o\
+		$(OBJECTS_PATH)/subscreen/unlimitedextended.o\
+		$(OBJECTS_PATH)/subscreen/buffered.o
+
+
+FULLNAME = libscreen.so.1.0.0
+NAME = libscreen.so
+
+all: $(FULLNAME) $(NAME)
+	@echo " [I] All modules built "
+
+
+$(OBJECTS_PATH)/%.o: $(SOURCES_PATH)/%.c++ ../../include/screen.h++
+	@echo " [C] Compiling "`pwd`"/$@ "
+	@g++ -c $(CFLAGS) $(INCLUDES_PATH)  $< -o $@
+
+
+$(FULLNAME): $(OBJECTS_PATH)  $(LOCAL_OBJECTS)
+	@echo " [L] Linking Screen library module"
+	@g++ -g -shared -Wl,-soname,libscreen.so -o $(FULLNAME) $(LOCAL_OBJECTS)  -lc
+
+$(NAME):
+	@echo " [I] Updating symlinks "
+	@ln -s $(FULLNAME) $(NAME)
+	@cd .. ; ln -s screen/$(NAME)
+
+
+clean:
+	@echo " [I] deleting objects "
+	@rm -rf $(OBJECTS_PATH)
+	@echo " [I] deleting LIBRARY "
+	@rm -f $(NAME) ../$(NAME) $(FULLNAME)
+	@echo " [I] cleaned "
+
+install:
+	@echo " [I] this is a beta version. you can't install it "
+
+$(OBJECTS_PATH):
+	@echo " [I] Creating objects directiory "
+	@mkdir $(OBJECTS_PATH)
+	@echo " [I] Creating objects subdirectories "
+	@cd $(OBJECTS_PATH); mkdir $(OBJECTS_SUBDIRECTORIES)

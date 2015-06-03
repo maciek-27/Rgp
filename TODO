@@ -1,0 +1,22 @@
+
+Rsh
+1. class Scr::Tk::WidgetGroup::iterator // and backward iterator//
+   and create a complex container allowing O(1) access by pointer
+   hashing.
+3. TextCanvas (later)
+4. Reimplement VT100/bin/editor using new API as example application 5
+
+mck
+1.
+Full TELNET
+2. 
+Special subscreen type NEEDED to implement TextCanvas
+3.
+Example applications demonstrating TELNET (1. reimplement
+   VT100/bin/netapp using new API, 2. write primitive proto-mud) name
+   them 4 and 6
+4. must compile and work in Windows, using Visual (not only mingw)
+
+
+
+

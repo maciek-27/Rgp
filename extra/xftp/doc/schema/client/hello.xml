@@ -1,0 +1,5 @@
+<xftp xmlns="client" version="0.1">
+	<hello>
+		<user_agent>Some random client identification</user_agent>
+	</hello>
+</xftp>

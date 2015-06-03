@@ -1,0 +1,211 @@
+\documentclass[11pt,a4paper]{article}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{times}
+\RequirePackage{indentfirst}
+\usepackage{listings}
+\RequirePackage[T1]{fontenc}
+\newcommand{\Class}[1]{\texttt{\textbf{#1}}}
+\date{January 29, 2008\\last updated: February 7, 2008}
+\author{Maciej Kamiński}
+\title{RexIO library 1.1 design requirements}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  Following document describes design requirements for 1.1 version of
+  RexIO library specification. It covers basic functionality, that has
+  to be implemented, design patterns that must be obeyed and other
+  project goals, that need do be achieved. 
+\end{abstract}
+
+\section{RexIO Platform}
+
+Current (1.0) version of RexIO library covers two basic functional
+modules: first implemented as librexio, covering basic screen operations
+and second implemented as librexiotk, encompassing basic UI
+construction toolkit. In 1.1 third module will be included, covering
+networking procedures. This will be classes representing running
+server, active client connection etc.
+
+These three modules together will form comprehensive application
+framework sufficient to easily create online, multi-user software,
+that provides  customizability,  performance and 
+maintainability. Please note, that this is very early stage of design,
+and everything may change before we start implementing it.
+
+\section{RexIO 1.1 networking module (\texttt{RexIO::Net})}
+
+The networking module will (as said above) contain set of classes
+implementing basic features of typical network application. Namespace
+for this module will be 
+
+\begin{itemize}
+\item \Class{Server} class --- implementing listening
+  socket. Creating \Class{ClientConnection} object for each incoming
+  connection. May easily be started to listen, and stopped (when
+  associated \Class{ConnectionPool} is empty).
+\item \Class{ConnectionPool} implementing set of active client connections
+  associated with running Server.
+\item \Class{ClientConnection} object is created for every incoming
+  connection by Server. It contains pair of standard C++ streams to
+  communicate with client. New thread is created by RexIO for each
+  ClientConnection.
+\end{itemize}
+
+\section{RexIO 1.1 screen module (\texttt{RexIO::Scr})}
+
+Core library module will also encounter major improvements
+
+\begin{itemize}
+\item \underline{Support for mouse operations.} These improvements may
+  require changes in all descendents of \Class{\_\_ScreenConnection}
+  class, which, \textit{nb.} will be renamed to
+  \Class{ScreenConnection} as well as adding new functions to
+  \Class{Connection} object
+\item Full level 1 of Unicode implementation, including RTL and LTR
+  text directions.
+\item Optimize screen operations in terms of both: speed and transfer.
+\item Introduce support for \texttt{SIGWINCH}
+\item Recognize full PC keyboard, including recognition of as many as
+  possible keys with Ctrl/Alt/Shift pressed (yes, this includes
+  processing \texttt{UNIX} signals for local connections).
+\item imtroduce Extended/Buffered subwindow types
+\end{itemize}
+
+\section{RexIO 1.1 UI toolkit module (\texttt{RexIO::Scr::Tk})}
+
+\begin{itemize}
+\item Make use of mouse support
+\item Introduce new widgets crucial for real-life application, that
+  including (but not limited to)
+  \begin{itemize}
+  \item TextEdit
+  \item ListBox
+  \item Frameset 
+  \item Table (as for spreadsheet programs)
+  \item A window, that may be scrolled
+  \item TextMap (or TextCanvas) - component for buffered, incrementally 
+	changed ascii-art graphics, rogue-like game maps etc.
+  \end{itemize}
+\item Introduce better support for L10n/i18n
+\item Improve stylesheet support
+\end{itemize}
+
+\section{Summary}
+1.1 will be a comprehensive platform for real-life multi-user applications,
+including important features, which, due to lack of time, are absent
+in 1.0. Enhanced interface (including networking module) will enable
+easy transition to portability to non-UNIX operating systems.
+
+\section*{Appendix A: proposal for programming interface %
+of Screen for accessing new types of subscreens in Doxygen/C++ format}
+\lstset{commentstyle=\textit,stepnumber=1000 ,keywordstyle=\bfseries,
+    showstringspaces=false}
+\lstset{numbers=none,numbersep=0.4cm,numberstyle=\tt,tabsize=4,
+    basicstyle=\tt\scriptsize,texcl=false}
+\lstset{language=C++,breaklines=true}
+\begin{lstlisting}
+class Scr::Screen
+    {
+		...
+		...existing interface...
+		...
+		public:
+		...
+		//new functions
+		/*!
+		  \param _y_offset vertical offset from top edge of this
+		  screen to top edge of new SubScreen.
+		  \param _x_offset horizontal offser
+		  \param _h height
+		  \param _w with
+		  \return  pointer to new BufferedSubScreen
+		  (programmer will have to free it's
+		  resources to prevent memory leak and other errors).
+		  BufferedSubScreen differs from basic SubScreen in many ways,
+		  in particular it has it's own buffer and therefore it's
+		  operations does not affect parent screen unless it's
+		  refreshed. 
+	  
+		  \exception Scr::Screen::SubscreenOutOfRange
+		  is thrown when too big subscreen requested or inapropriate
+		  position specified
+		*/
+		virtual Screen *
+		CreateBufferedSubScreen(Uint _y_offset,
+								Uint _x_offset, Uint _h,
+								Uint _w)throw(SubscreenOutOfRange);
+	
+		/*!
+		  \param _y_offset vertical offset from top edge of this
+		  screen to top edge of new SubScreen.
+		  \param _x_offset horizontal offser
+		  \param _h height
+		  \param _w with
+		  \param ext_left extended range-checking limit
+		  \param ext_right extended range-checking limit
+		  \param ext_top extended range-checking limit
+		  \param ext_bottom extended range-checking limit
+		  \return  pointer to new SmartSubScreen
+		  (programmer will have to free it's
+		  resources to prevent memory leak and other errors).
+		  Key differnces between SmartSubScreen and basic SubScreen is,
+		  that it:
+		  - shifts contents up by ext_top and left by ext_left
+		  - allows writing space of (ext_left + _w + ext_right)
+		  horizontal and (ext_top + _h + ext_bottom) vertical (so it's
+		  internal size is bigger than displayed size). It crops
+		  everything, that does not fit in this internal size, but
+		  fits in external. It throws exceptions connected w/ range
+		  only if internal range limit is broken.	  
+	  
+		  \exception Scr::Screen::SubscreenOutOfRange
+		  is thrown when too big subscreen requested or inapropriate
+		  position specified	  
+		*/
+		virtual Screen *
+		CreateExtendedSubScreen(Uint _y_offset,
+								Uint _x_offset, Uint _h,
+								Uint _w,Uint ext_left, Uint ext_right, 
+								Uint ext_top, Uint ext_bottom)
+			throw(SubscreenOutOfRange);
+	
+		/*!
+		  \param _y_offset vertical offset from top edge of this
+		  screen to top edge of new SubScreen.
+		  \param _x_offset horizontal offser
+		  \param _h height
+		  \param _w with
+		  \param ext_left left shift_and_crop of content
+		  \param ext_top top shift_and_crop of content
+		  \return  pointer to new SmartSubScreen
+		  (programmer will have to free it's
+		  resources to prevent memory leak and other errors).
+		  Key differnces between SmartSubScreen and basic SubScreen is,
+		  that it:
+		  - shifts contents up by ext_top and left by ext_left
+		  - turns of range checking
+		  - crops out-of-range content
+	  
+		  \exception Scr::Screen::SubscreenOutOfRange
+		  is thrown when too big subscreen requested or inapropriate
+		  position specified
+
+		  \note no range checking means, that programmer gets no
+		  information on result of his actions
+		*/
+
+		virtual Screen *
+		CreateUnlimitedExtendedSubScreen(Uint _y_offset,
+										 Uint _x_offset, Uint _h,
+										 Uint _w,Uint ext_left,
+										 Uint ext_top
+			)throw(SubscreenOutOfRange);
+		//end of new functions
+		...
+		...existing interface...
+		...
+    } 
+\end{lstlisting}
+
+\end{document}

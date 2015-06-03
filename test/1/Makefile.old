@@ -1,0 +1,55 @@
+CFLAGS =  -ggdb -ansi -Wall -pedantic -pedantic-errors
+LIBS = -L../../lib -lscreen
+
+EXES_PATH =bin
+
+OBJECTS_PATH = objects
+SOURCES_PATH = src
+INCLUDES_PATH = ../../include
+
+LOG_FILE_NAME = test_log
+START_SCRIPT = run_test
+
+LOCAL_OBJECTS  =$(OBJECTS_PATH)/main.o
+
+EXECUTABLE_NAME= $(EXES_PATH)/test
+
+
+all:$(EXECUTABLE_NAME)
+	@echo " [I] All modules built "
+
+
+$(EXECUTABLE_NAME): $(OBJECTS_PATH) $(EXES_PATH) $(LOCAL_OBJECTS) $(START_SCRIPT)
+	@echo " [L] Linking main executable file "
+	@g++ -o $(EXECUTABLE_NAME) $(LOCAL_OBJECTS) $(LIBS)
+
+$(OBJECTS_PATH)/%.o: $(SOURCES_PATH)/%.c++   ../../include/screen.h++ 
+	@echo " [C] Compiling $@ "
+	@g++ -c $(CFLAGS) -I $(INCLUDES_PATH)  $< -o $@
+
+
+clean:
+	@echo " [I] deleting objects "
+	@rm -rdf $(OBJECTS_PATH)
+	@echo " [I] deleting executable "
+	@rm -rdf $(EXES_PATH)
+	@echo " [I] Removing start script"
+	@rm -f  $(START_SCRIPT) $(LOG_FILE_NAME) 
+	@echo " [I] cleaned "
+
+install:
+	@echo " [I] this is a beta version. you can't install it "
+
+$(OBJECTS_PATH):
+	@echo " [I] Creating objects directiory "
+	@mkdir $(OBJECTS_PATH)
+
+$(EXES_PATH):
+	@echo " [I] Creating bin directiory "
+	@mkdir $(EXES_PATH)
+
+
+$(START_SCRIPT): Makefile
+	@echo " [I] Creating start script"
+	@echo -e \#!/bin/bash\\\nLD_LIBRARY_PATH=\\\044\(pwd\)/../../lib valgrind ./bin/test 2\>$(LOG_FILE_NAME) > $(START_SCRIPT)
+	@chmod a+x $(START_SCRIPT)

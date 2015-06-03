@@ -1,0 +1,40 @@
+almost_all: LIB TEST
+	@echo "[I] ALMOST ALL DONE (with exception of documentation)"
+
+LIB:
+	@echo "[I] Making libraries"
+	@make -C lib -f Makefile.old
+
+TEST: LIB
+	@echo "[I] Making test program"
+	@make -C test/1
+	@make -C test/2
+	@make -C test/3
+	@make -C test/4
+
+all:   LIB TEST DOC
+	@echo "[I] ALL DONE"
+
+
+DOC: 
+	@echo "[I] Generating documentation"
+	@make -C doc
+
+DOCCLEAN: 
+	@echo "[I] Cleaning documentation"
+	@make -C doc clean
+
+clean: DOCCLEAN
+	@echo "[I] Removing libraries"
+	@make -C lib clean
+	@echo "[I] Removing test program"
+	@make -C test/1 clean
+	@make -C test/2 clean
+	@make -C test/3 clean
+	@make -C test/4 clean
+	@echo "[I] all clean "
+DNAME=s2v5
+dist:
+	@cp -rd . ../$(DNAME)
+	@make -C ../$(DNAME) clean
+	@cd .. ; tar -cjf $(DNAME).tbz $(DNAME) ; rm -rf $(DNAME)

@@ -1,0 +1,11 @@
+<xftp xmlns="server" version="0.1">
+	<hello>
+		<start_tls required="true"/>
+		<server_name>Secret Service File Server</server_name>
+		<auth_methods>
+			<auth_method>NONE</auth_method>
+			<auth_method>PLAIN</auth_method>
+			<auth_method>SASL</auth_method>
+		</auth_methods>
+	</hello>
+</xftp>

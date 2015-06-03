@@ -1,0 +1,17 @@
+<xftp xmlns="client" version="0.1">
+	<cstream_request id="1">
+		<filters>
+			<filter>GZIP</filter>
+		</filters>
+	</cstream_request>
+	<dstream_request id="2">
+		<start_tls />
+		<filters>
+			<filter>LZO</filter>
+		</filters>
+	</dstream_request>
+	<cstream_request id="3321">
+		<start_tls />
+	</cstream_request>
+	<dstream_request id="32" />
+</xftp>

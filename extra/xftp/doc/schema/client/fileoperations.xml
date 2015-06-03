@@ -1,0 +1,11 @@
+<xftp xmlns="client" version="0.1">
+	<open id="1">
+		<filename>somefile</filename>
+	</open>
+	<read id="2" size="4096" stream="2" />
+	<write id="3" size="4096" stream="2" />
+	<truncate id="4" size="4096" />
+	<seek id="5" offset="end" />
+	<write id="6" size="4324231" stream="3" />
+	<seek id="7" offset="0" />
+</xftp>

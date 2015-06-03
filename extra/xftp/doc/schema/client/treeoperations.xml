@@ -1,0 +1,26 @@
+<xftp xmlns="client" version="0.1">
+	<copy id="1">
+		<src>somefile</src>
+		<dest>newdest</dest>
+	</copy>
+	<move id="2">
+		<src>somefile</src>
+		<dest>newdest</dest>
+	</move>
+	<delete id="3">
+		<target>somedirectory</target>
+		<recursive/>
+	</delete>
+	<create id="4">
+		<filename>newfile</filename>
+		<flags>
+			<data/><read/><write/>
+		</flags>
+	</create>
+	<create id="5">
+		<filename>newfile</filename>
+		<flags>
+			<branch/>
+		</flags>
+	</create>
+</xftp>

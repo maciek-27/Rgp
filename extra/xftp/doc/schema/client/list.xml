@@ -1,0 +1,23 @@
+<xftp xmlns="client" version="0.1">
+	<list id="1">
+		<recurse>∞</recurse>
+		<metadata_request>
+			<filename />
+			<filesize />
+		</metadata_request>
+		<from>20</from>
+		<to>300</to>
+	</list>
+	<chdir id="3">somepath</chdir>
+	<list id="4">
+		<dir>./</dir>
+		<recurse>∞</recurse>
+		<metadata_request>
+			<flags />
+			<filename />
+			<filesize />
+		</metadata_request>
+		<from>20</from>
+		<to>300</to>
+	</list>
+</xftp>
